@@ -3,27 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avani Spa &amp; Massage - Catálogo de Servicios</title>
-    
-    <!-- Google tag (gtag.js) - Google Analytics -->
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SEO - TITLE, DESCRIPTION, KEYWORDS
+         Optimizado para la campaña de Google Ads (masajes oaxaca)
+         ═══════════════════════════════════════════════════════════════ -->
+    <title>Masajes en Oaxaca Centro | Avani Spa &amp; Massage - Spa de Lujo</title>
+    <meta name="description" content="Spa de lujo en el Centro Histórico de Oaxaca. Masajes terapéuticos, relajantes, en pareja y tratamientos faciales con terapeutas certificados. Reserva por WhatsApp.">
+    <meta name="keywords" content="masajes oaxaca, spa oaxaca, masaje relajante oaxaca, masajes en pareja oaxaca, tratamientos faciales oaxaca, masajes centro oaxaca, avani spa">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://masajesoaxaca.dondeseria.com/landing/index.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Avani Spa &amp; Massage Oaxaca | Tu Oasis de Bienestar">
+    <meta property="og:description" content="Masajes de lujo en el Centro Histórico de Oaxaca. Reserva tu sesión por WhatsApp hoy.">
+    <meta property="og:image" content="/imagen1.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         GOOGLE ADS + GOOGLE ANALYTICS (gtag.js)
+         Nueva cuenta de Google Ads: AW-17964636350
+         ═══════════════════════════════════════════════════════════════ -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HX042ELFV5"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-HX042ELFV5');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HX042ELFV5');
+        gtag('config', 'AW-17964636350');
     </script>
-    
-    <!-- Google tag (gtag.js) - Google Ads -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17389033791"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17389033791');
-    </script>
-    
-    <!-- Meta Pixel Code -->
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         META PIXEL (Facebook / Instagram Ads)
+         ═══════════════════════════════════════════════════════════════ -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -37,122 +50,719 @@
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1529369061395928&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-    
-    <!-- FUNCIONES DE TRACKING PARA GOOGLE ADS Y META -->
+    src="https://www.facebook.com/tr?id=1529369061395928&amp;ev=PageView&amp;noscript=1" alt=""/></noscript>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SCHEMA.ORG - LocalBusiness (crítico para SEO local)
+         ═══════════════════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Avani Spa & Massage",
+      "image": "/imagen1.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Quetzalcoatl #121, Col. Centro",
+        "addressLocality": "Oaxaca de Juárez",
+        "addressRegion": "Oaxaca",
+        "postalCode": "68000",
+        "addressCountry": "MX"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 17.0677982,
+        "longitude": -96.725272
+      },
+      "telephone": "+52 951 475 1189",
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "10:00",
+        "closes": "20:00"
+      },
+      "url": "https://masajesoaxaca.dondeseria.com/landing/index.html"
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TRACKING UNIFICADO - TODO A WHATSAPP
+         TODOS los botones de contacto disparan el mismo tag de Google Ads:
+            AW-17964636350/IrT5CJGKyPsbEL6xmvZC  (Whatsapp_contactos)
+         valor: 1.0 · moneda: COP
+         ═══════════════════════════════════════════════════════════════ -->
     <script>
-    // Función para tracking de WhatsApp (Contacto)
-    function trackWhatsAppLead(whatsappUrl, eventLabel) {
+    var WHATSAPP_NUMBER = '5219514751189';
+    var GOOGLE_ADS_SEND_TO = 'AW-17964636350/IrT5CJGKyPsbEL6xmvZC';
+
+    // --- Helper: dispara la conversión y abre WhatsApp ---
+    function _fireAndOpen(whatsappUrl, eventLabel, fbEvent) {
+        var opened = false;
+        function openOnce() {
+            if (opened) return;
+            opened = true;
+            window.open(whatsappUrl, '_blank');
+        }
+
         try {
-            // Google Ads Conversion
+            // >>> GOOGLE ADS CONVERSION (Whatsapp_contactos) <<<
+            // Snippet idéntico al que proporciona Google Ads para esta conversión.
+            // event_callback asegura que WhatsApp abra después de registrarse.
             gtag('event', 'conversion', {
-                'send_to': 'AW-17389033791/3XoUCLrD764bEL-y3uNA',
-                'value': 10000,
+                'send_to': GOOGLE_ADS_SEND_TO,
+                'value': 1.0,
                 'currency': 'COP',
-                'event_callback': function() {
-                    window.open(whatsappUrl, '_blank');
-                }
+                'transaction_id': Date.now().toString(),
+                'event_callback': openOnce
             });
-            
-            // Meta Pixel Event
+
+            // Meta Pixel
             if (typeof fbq === 'function') {
-                fbq('trackCustom', 'WhatsAppContactSpa', {
-                    event_label: eventLabel,
-                    value: 10000,
+                fbq('track', fbEvent, {
+                    content_name: eventLabel,
+                    value: 1.0,
                     currency: 'COP'
                 });
+                fbq('trackCustom', 'WhatsAppContactSpa', {
+                    event_label: eventLabel
+                });
             }
-            
-            // Google Analytics Event
+
+            // GA4
             gtag('event', 'generate_lead', {
-                'event_category': 'engagement',
-                'event_label': eventLabel,
-                'value': 1000
+                'event_category': 'whatsapp',
+                'event_label': eventLabel
             });
-            
-        } catch (error) {
-            console.error('Error en tracking:', error);
-            window.open(whatsappUrl, '_blank');
+
+            // Fallback: si gtag tarda, abrimos igual a los 800ms
+            setTimeout(openOnce, 800);
+        } catch (e) {
+            console.error('Tracking error:', e);
+            openOnce();
         }
         return false;
     }
-    
-    // Función para tracking de Calendly (Reserva de cita)
-    function trackCalendlyReserva(serviceType, serviceValue) {
-        try {
-            // Google Ads Conversion
-            gtag('event', 'conversion', {
-                'send_to': 'AW-17389033791/1YyICNLh6K4bEL-y3uNA',
-                'value': serviceValue,
-                'currency': 'COP',
-                'transaction_id': Date.now(),
-                'event_label': serviceType
-            });
-            
-            // Meta Pixel Event
-            if (typeof fbq === 'function') {
-                fbq('track', 'Schedule', {
-                    service_name: serviceType,
-                    value: serviceValue,
-                    currency: 'COP',
-                    content_type: 'service'
-                });
-            }
-            
-            // Google Analytics Event
-            gtag('event', 'book_appointment', {
-                'event_category': 'booking',
-                'event_label': serviceType,
-                'value': serviceValue
-            });
-            
-            console.log(`Reserva tracked: ${serviceType} - $${serviceValue}`);
-        } catch (error) {
-            console.error('Error en tracking Calendly:', error);
-        }
+
+    // --- Reserva de servicio específico (mensaje pre-rellenado por servicio) ---
+    function reservarServicio(serviceName, serviceValue) {
+        var msg = 'Hola Avani Spa, me gustaría reservar el servicio: ' + serviceName + '. ¿Tienen disponibilidad esta semana?';
+        var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+        return _fireAndOpen(
+            url,
+            'reserva_' + serviceName.toLowerCase().replace(/\s+/g, '_'),
+            'Schedule'
+        );
     }
-    
-    // Función auxiliar para eventos personalizados de Meta
-    function fbqTrackCustomEvent(eventName, serviceName, serviceId) {
-        try {
-            if (typeof fbq === 'function') {
-                fbq('trackCustom', eventName, {
-                    service_name: serviceName,
-                    service_id: serviceId,
-                    timestamp: new Date().getTime()
-                });
-                console.log('Evento Meta registrado:', eventName, serviceName);
-            }
-        } catch (error) {
-            console.error('Error al registrar evento Meta:', error);
-        }
+
+    // --- Contacto general (botón flotante, CTAs de cabecera y cierre) ---
+    function contactoGeneral(source) {
+        var msg = 'Hola Avani Spa, me gustaría información sobre los servicios 🌿✨';
+        var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+        return _fireAndOpen(
+            url,
+            source || 'contacto_general',
+            'Contact'
+        );
     }
     </script>
-    
-    <!-- Calendly badge widget begin -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <!-- Calendly badge widget end -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 
+    <!-- ═══════════════════════════════════════════════════════════════
+         ESTILOS NUEVOS - complementan style.css
+         Puedes mover este bloque completo a style.css cuando quieras
+         ═══════════════════════════════════════════════════════════════ -->
+    <style>
+    :root {
+        --avani-gold: #DAA520;
+        --avani-gold-light: #E6B85C;
+        --avani-gold-deep: #B8860B;
+        --avani-dark: #1a1a1a;
+        --avani-cream: #f7f5f2;
+        --avani-text: #2c2c2c;
+        --avani-text-light: #6b6b6b;
+        --avani-whatsapp: #25D366;
+    }
+
+    /* ═══ TRUST BAR (bajo el hero) ═══ */
+    .trust-bar {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        padding: 1.2rem 1.5rem;
+        margin: 1.5rem auto 2rem;
+        max-width: 900px;
+        background: rgba(255,255,255,0.92);
+        border-radius: 50px;
+        border: 1px solid rgba(218,165,32,0.25);
+        backdrop-filter: blur(8px);
+    }
+    .trust-bar__item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        color: var(--avani-text);
+        font-weight: 500;
+    }
+    .trust-bar__icon {
+        color: var(--avani-gold);
+        font-size: 1.1rem;
+    }
+
+    /* ═══ SECCIÓN DE BENEFICIOS ═══ */
+    .benefits-section {
+        padding: 5rem 1.5rem 4rem;
+        text-align: center;
+    }
+    .benefits-section .section-eyebrow {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--avani-gold);
+        margin-bottom: 0.8rem;
+    }
+    .benefits-section h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.8rem;
+        font-weight: 500;
+        color: var(--avani-dark);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    .benefits-section h2 em {
+        color: var(--avani-gold);
+        font-style: italic;
+    }
+    .benefits-section .subtitle {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--avani-text-light);
+        max-width: 680px;
+        margin: 0 auto 3.5rem;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1.8rem;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .benefit-card {
+        padding: 2.2rem 1.6rem;
+        background: rgba(255,255,255,0.97);
+        border-radius: 14px;
+        border: 1px solid rgba(218,165,32,0.18);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .benefit-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+    }
+    .benefit-icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 1.2rem;
+        background: linear-gradient(135deg, var(--avani-gold), var(--avani-gold-light));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        color: white;
+        box-shadow: 0 8px 20px rgba(218,165,32,0.3);
+    }
+    .benefit-card h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--avani-dark);
+        margin-bottom: 0.6rem;
+    }
+    .benefit-card p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        color: var(--avani-text-light);
+        line-height: 1.65;
+    }
+
+    /* ═══ SERVICIOS - IMAGEN EN LUGAR DE VIDEO ═══ */
+    .service-image {
+        width: 100%;
+        height: 240px;
+        overflow: hidden;
+        border-radius: 12px 12px 0 0;
+        position: relative;
+    }
+    .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+        display: block;
+    }
+    .service-card:hover .service-image img {
+        transform: scale(1.06);
+    }
+    .service-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.25) 100%);
+        pointer-events: none;
+    }
+
+    /* ═══ TESTIMONIOS ═══ */
+    .testimonials-section {
+        padding: 5rem 1.5rem;
+        background: linear-gradient(135deg, rgba(218,165,32,0.06), rgba(247,245,242,0.8));
+    }
+    .testimonials-section .section-eyebrow {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--avani-gold);
+        margin-bottom: 0.8rem;
+        text-align: center;
+    }
+    .testimonials-section h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.8rem;
+        font-weight: 500;
+        color: var(--avani-dark);
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .testimonials-section h2 em {
+        color: var(--avani-gold);
+        font-style: italic;
+    }
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .testimonial-card {
+        background: white;
+        padding: 2.2rem 2rem;
+        border-radius: 14px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        position: relative;
+        border-top: 3px solid var(--avani-gold);
+    }
+    .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 5rem;
+        color: var(--avani-gold);
+        line-height: 1;
+        opacity: 0.35;
+    }
+    .testimonial-stars {
+        color: var(--avani-gold);
+        font-size: 1.05rem;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+    }
+    .testimonial-text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.95rem;
+        color: var(--avani-text);
+        line-height: 1.7;
+        font-style: italic;
+        margin-bottom: 1.2rem;
+    }
+    .testimonial-author {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 600;
+        color: var(--avani-dark);
+        font-size: 1.1rem;
+    }
+    .testimonial-meta {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.78rem;
+        color: var(--avani-text-light);
+        margin-top: 0.2rem;
+    }
+
+    /* ═══ FAQ ═══ */
+    .faq-section {
+        padding: 5rem 1.5rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .faq-section .section-eyebrow {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--avani-gold);
+        margin-bottom: 0.8rem;
+        text-align: center;
+    }
+    .faq-section h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.8rem;
+        font-weight: 500;
+        color: var(--avani-dark);
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .faq-section h2 em {
+        color: var(--avani-gold);
+        font-style: italic;
+    }
+    .faq-item {
+        background: white;
+        border: 1px solid rgba(218,165,32,0.2);
+        border-radius: 10px;
+        margin-bottom: 0.9rem;
+        overflow: hidden;
+        transition: border-color 0.3s;
+    }
+    .faq-item.active {
+        border-color: var(--avani-gold);
+    }
+    .faq-question {
+        padding: 1.3rem 1.6rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 0.98rem;
+        color: var(--avani-dark);
+        transition: background 0.25s;
+        user-select: none;
+    }
+    .faq-question:hover {
+        background: rgba(218,165,32,0.05);
+    }
+    .faq-question::after {
+        content: '+';
+        font-size: 1.6rem;
+        color: var(--avani-gold);
+        font-weight: 300;
+        transition: transform 0.3s;
+        flex-shrink: 0;
+        margin-left: 1rem;
+    }
+    .faq-item.active .faq-question::after {
+        transform: rotate(45deg);
+    }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        padding: 0 1.6rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.92rem;
+        line-height: 1.75;
+        color: var(--avani-text-light);
+    }
+    .faq-item.active .faq-answer {
+        max-height: 400px;
+        padding: 0 1.6rem 1.4rem;
+    }
+
+    /* ═══ CTA FINAL ═══ */
+    .final-cta {
+        padding: 6rem 1.5rem;
+        text-align: center;
+        background:
+            linear-gradient(135deg, rgba(26,26,26,0.88), rgba(26,26,26,0.78)),
+            url('/imagen1.png') center/cover no-repeat;
+        color: white;
+        margin-top: 4rem;
+        position: relative;
+    }
+    .final-cta .section-eyebrow {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--avani-gold);
+        margin-bottom: 1rem;
+    }
+    .final-cta h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3rem;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 1.2rem;
+        line-height: 1.2;
+    }
+    .final-cta h2 em {
+        color: var(--avani-gold);
+        font-style: italic;
+    }
+    .final-cta p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.08rem;
+        max-width: 620px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.7;
+        opacity: 0.92;
+    }
+    .btn-whatsapp-large {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 1.2rem 3rem;
+        background: var(--avani-whatsapp);
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 1.05rem;
+        text-decoration: none;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+        box-shadow: 0 12px 35px rgba(37,211,102,0.35);
+    }
+    .btn-whatsapp-large:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 45px rgba(37,211,102,0.5);
+        background: #1eb055;
+    }
+    .btn-whatsapp-large::before {
+        content: '';
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.8 3.08 1.2 4.73 1.2h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2m5.82 14.06c-.25.7-1.44 1.34-2.01 1.43-.54.08-1.21.12-1.95-.12-.45-.14-1.03-.34-1.77-.66-3.12-1.35-5.15-4.49-5.3-4.7-.16-.2-1.27-1.69-1.27-3.23 0-1.54.81-2.29 1.1-2.6.28-.31.62-.39.83-.39.2 0 .41 0 .59.01.19 0 .44-.07.69.52.26.61.87 2.15.95 2.3.08.16.13.34.03.54-.1.2-.15.32-.3.5-.15.18-.31.4-.44.54-.15.15-.3.31-.13.61.17.3.77 1.28 1.66 2.07 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.13.65-.08.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2 .95.3.15.5.22.57.34.07.12.07.72-.18 1.42'/></svg>");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    /* ═══ UBICACIÓN ═══ */
+    .location-full {
+        padding: 5rem 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .location-full .section-eyebrow {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--avani-gold);
+        margin-bottom: 0.8rem;
+        text-align: center;
+    }
+    .location-full h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.8rem;
+        font-weight: 500;
+        color: var(--avani-dark);
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .location-full h2 em { color: var(--avani-gold); font-style: italic; }
+    .location-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+    .location-info {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--avani-text);
+        line-height: 1.8;
+    }
+    .location-info .info-row {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.4rem;
+        align-items: flex-start;
+    }
+    .location-info .info-icon {
+        color: var(--avani-gold);
+        font-size: 1.3rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+    .location-info strong {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.3rem;
+        color: var(--avani-dark);
+        display: block;
+        margin-bottom: 0.2rem;
+        font-weight: 600;
+    }
+    .location-info a { color: var(--avani-gold); text-decoration: none; }
+    .location-info a:hover { text-decoration: underline; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       BOTÓN FLOTANTE DE WHATSAPP - con LOGO visible + animación
+       Autocontenido: no depende de style.css
+       ═══════════════════════════════════════════════════════════════ */
+    .floating-whatsapp {
+        position: fixed !important;
+        bottom: 25px !important;
+        right: 25px !important;
+        width: 62px !important;
+        height: 62px !important;
+        background-color: #25D366 !important;
+        border-radius: 50% !important;
+        cursor: pointer !important;
+        z-index: 9999 !important;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.8 3.08 1.2 4.73 1.2h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2m5.82 14.06c-.25.7-1.44 1.34-2.01 1.43-.54.08-1.21.12-1.95-.12-.45-.14-1.03-.34-1.77-.66-3.12-1.35-5.15-4.49-5.3-4.7-.16-.2-1.27-1.69-1.27-3.23 0-1.54.81-2.29 1.1-2.6.28-.31.62-.39.83-.39.2 0 .41 0 .59.01.19 0 .44-.07.69.52.26.61.87 2.15.95 2.3.08.16.13.34.03.54-.1.2-.15.32-.3.5-.15.18-.31.4-.44.54-.15.15-.3.31-.13.61.17.3.77 1.28 1.66 2.07 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.13.65-.08.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2 .95.3.15.5.22.57.34.07.12.07.72-.18 1.42'/></svg>") !important;
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
+        background-size: 34px 34px !important;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.25), 0 0 0 0 rgba(37,211,102,0.6) !important;
+        animation: pulse-whatsapp 2s infinite !important;
+        transition: transform 0.3s ease !important;
+    }
+    .floating-whatsapp:hover {
+        transform: scale(1.08) !important;
+    }
+    @keyframes pulse-whatsapp {
+        0%   { box-shadow: 0 6px 18px rgba(0,0,0,0.25), 0 0 0 0 rgba(37,211,102,0.65); }
+        70%  { box-shadow: 0 6px 18px rgba(0,0,0,0.25), 0 0 0 20px rgba(37,211,102,0); }
+        100% { box-shadow: 0 6px 18px rgba(0,0,0,0.25), 0 0 0 0 rgba(37,211,102,0); }
+    }
+
+    /* ═══ SCROLL ANIMATIONS (Intersection Observer) ═══ */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       BLOQUE DE PRECIOS - DESCOMENTAR PARA REACTIVAR
+       ═══════════════════════════════════════════════════════════════ */
+    /*
+    .pricing-badge {
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        background: linear-gradient(135deg, var(--avani-gold), var(--avani-gold-light));
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border-radius: 20px;
+        margin: 0.5rem 0;
+        letter-spacing: 0.5px;
+    }
+    .service-card .pricing-badge { margin-top: 0.8rem; }
+    */
+
+    /* ═══════════════════════════════════════════════════════════════
+       POPUP DE OFERTA DE BIENVENIDA - DESCOMENTAR PARA REACTIVAR
+       ═══════════════════════════════════════════════════════════════ */
+    /*
+    .welcome-popup {
+        position: fixed;
+        bottom: 110px;
+        right: 20px;
+        background: white;
+        padding: 1.5rem 1.8rem;
+        border-radius: 14px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        max-width: 320px;
+        z-index: 998;
+        border-left: 4px solid var(--avani-gold);
+        animation: slideInRight 0.5s ease 2s both;
+    }
+    .welcome-popup h4 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.3rem;
+        color: var(--avani-gold);
+        margin-bottom: 0.5rem;
+    }
+    .welcome-popup p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        color: var(--avani-text);
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+    .welcome-popup .popup-close {
+        position: absolute;
+        top: 10px;
+        right: 14px;
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: var(--avani-text-light);
+    }
+    @keyframes slideInRight {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    */
+
+    @media (max-width: 768px) {
+        .benefits-section h2,
+        .testimonials-section h2,
+        .faq-section h2,
+        .location-full h2 { font-size: 2.1rem; }
+        .final-cta h2 { font-size: 2.3rem; }
+        .benefits-section { padding: 3.5rem 1.2rem 2.5rem; }
+        .testimonials-section { padding: 3.5rem 1.2rem; }
+        .faq-section { padding: 3.5rem 1.2rem; }
+        .location-grid { grid-template-columns: 1fr; gap: 2rem; }
+        .trust-bar { gap: 1.2rem; padding: 1rem 1.2rem; }
+        .trust-bar__item { font-size: 0.82rem; }
+        .btn-whatsapp-large { padding: 1rem 2rem; font-size: 0.95rem; }
+        .service-image { height: 200px; }
+        .floating-whatsapp {
+            width: 56px !important;
+            height: 56px !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            background-size: 30px 30px !important;
+        }
+    }
+    </style>
 </head>
+
 <body>
     <div class="bg-pattern"></div>
-    
+
     <!-- Audio de fondo -->
     <audio id="bgMusic" loop>
         <source src="Frecuencia de la Salud y Los Milagros _ Repara el ADN _ Tono Solfeggio 528 Hz _ 20 Min x Día MINIMO. [8fUWEKa3rjg].mp3" type="audio/mpeg">
     </audio>
-    
     <div class="audio-control playing" id="audioControl"></div>
 
     <div class="container">
+
+        <!-- HEADER -->
         <header>
-            <button class="btn-header" onclick="scrollToServices()">RESERVAR</button>
+            <button class="btn-header" onclick="return contactoGeneral('header_cta')">RESERVAR</button>
             <div class="spa-name">Avani Spa &amp; Massage</div>
             <div class="language-switcher">
                 <button class="lang-btn" onclick="switchLanguage('en')" id="en-btn">English</button>
@@ -161,404 +771,534 @@
         </header>
 
         <div class="content-wrapper">
+
+        <!-- HERO -->
         <section class="hero">
+            <br><br>
             <h1>
-                Bienvenido a <span class="highlight">Avani Spa &amp; Massage</span>
+                Masajes en <span class="highlight">Oaxaca Centro</span>
             </h1>
-            <p class="hero-subtitle">Tu Oasis de Lujo para el Bienestar y la Relajación en Oaxaca</p>
-            
-            
-            <div class="banner-placeholder">
-                <img src="hillarymilena.jpeg" alt="Banner" class="banner-image">
-            </div>
-            
+            <p class="hero-subtitle">
+                Tu oasis de lujo para el bienestar y la relajación en el corazón histórico de la ciudad
+            </p>
 
-            <!--
             <div class="banner-placeholder">
-                <video autoplay muted loop playsinline class="banner-video">
-                    <source src="2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <img src="/imagen1.png" alt="Avani Spa &amp; Massage Oaxaca - Masajes de lujo en Centro Histórico" class="banner-image">
             </div>
-            -->
 
+            <div class="trust-bar fade-in">
+                <div class="trust-bar__item">
+                    <span class="trust-bar__icon">✦</span>
+                    <span>Terapeutas Certificados</span>
+                </div>
+                <div class="trust-bar__item">
+                    <span class="trust-bar__icon">◆</span>
+                    <span>Centro Histórico</span>
+                </div>
+                <div class="trust-bar__item">
+                    <span class="trust-bar__icon">❋</span>
+                    <span>Lun a Sáb · 10am - 8pm</span>
+                </div>
+                <div class="trust-bar__item">
+                    <span class="trust-bar__icon">♡</span>
+                    <span>Parejas Bienvenidas</span>
+                </div>
+            </div>
 
             <div class="info-section">
-                <h3>Ubicado en el Centro Histórico de Oaxaca, Quetzalcoatl #121, Col. Centro, nuestro spa es fácilmente accesible y está diseñado para ofrecerte una experiencia única de bienestar con todas las comodidades para que tu visita sea perfecta.</h3>
-                
+                <h3>Ubicados en Quetzalcoatl #121, Col. Centro. Un espacio diseñado para ofrecerte una experiencia de bienestar única, con terapeutas profesionales y productos premium.</h3>
+
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.0992308864866!2d-96.72527199999999!3d17.067798199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c7233915acf633%3A0x5efea6c0943f47d1!2sAvani%20Spa%20oaxaca!5e0!3m2!1ses-419!2sco!4v1776804033993!5m2!1ses-419!2sco" 
-                            width="100%" 
-                            height="300" 
-                            style="border:0; border-radius: 10px;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.0992308864866!2d-96.72527199999999!3d17.067798199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c7233915acf633%3A0x5efea6c0943f47d1!2sAvani%20Spa%20oaxaca!5e0!3m2!1ses-419!2sco!4v1776804033993!5m2!1ses-419!2sco"
+                            width="100%"
+                            height="300"
+                            style="border:0; border-radius: 10px;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación Avani Spa Oaxaca">
                     </iframe>
                 </div>
-                
-                <div class="schedule">Estamos abiertos de lunes a sábado de 10:00 a.m. a 8:00 p.m.</div>
+
+                <div class="schedule">Abierto de lunes a sábado · 10:00 a.m. a 8:00 p.m.</div>
             </div>
 
             <div class="cta-buttons">
                 <button class="btn btn-secondary" onclick="scrollToServices()">Ver Servicios</button>
-                <button class="btn btn-whatsapp" onclick="scrollToServices()">Reservar</button>
+                <button class="btn btn-whatsapp" onclick="return contactoGeneral('hero_cta')">Reservar por WhatsApp</button>
             </div>
         </section>
 
-
+        <!-- BENEFICIOS -->
+        <section class="benefits-section fade-in">
+            <div class="section-eyebrow">Por Qué Avani</div>
+            <h2>La experiencia spa <em>más refinada</em> de Oaxaca</h2>
+            <p class="subtitle">
+                No somos un spa más. Cada detalle está pensado para que desconectes del mundo exterior
+                desde el momento en que cruzas nuestra puerta.
+            </p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">◈</div>
+                    <h3>Ubicación Privilegiada</h3>
+                    <p>A pasos del Zócalo y el Centro Histórico. Fácilmente accesible, perfecto para turistas y residentes.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✦</div>
+                    <h3>Terapeutas Expertos</h3>
+                    <p>Profesionales certificados con años de experiencia en técnicas terapéuticas, relajación y bienestar integral.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">❋</div>
+                    <h3>Ambiente de Lujo</h3>
+                    <p>Salas privadas, aromaterapia, música 528 Hz y aceites esenciales premium en cada sesión.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">♡</div>
+                    <h3>Espacios para Parejas</h3>
+                    <p>Salas diseñadas para dos personas. La experiencia perfecta para reconectar con quien amas.</p>
+                </div>
+            </div>
+        </section>
 
         <div class="divider"></div>
 
+        <!-- SERVICIOS -->
         <section class="services-section" id="servicios">
             <h2>Nuestros Servicios</h2>
-            
+
             <div class="tabs">
-                <button class="tab active" onclick="showTab('massages')">Massages</button>
-                <button class="tab" onclick="showTab('four-hands')">4 Hands Massage</button>
-                <button class="tab" onclick="showTab('facials')">Facial Treatments</button>
+                <button class="tab active" onclick="showTab('massages', this)">Masajes</button>
+                <button class="tab" onclick="showTab('four-hands', this)">Masaje 4 Manos</button>
+                <button class="tab" onclick="showTab('facials', this)">Tratamientos Faciales</button>
             </div>
 
-            <!-- Tab Massages -->
+            <!-- TAB: MASAJES -->
             <div id="massages" class="tab-content active">
+
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Terapeutico.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="/imagen2.png" alt="Masaje Terapéutico en Avani Spa Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Therapeutic Massage</div>
+                    <div class="service-title">Masaje Terapéutico</div>
                     <div class="service-description">
-                        A focused treatment designed to address specific muscle tension and pain points. Our therapeutic approach combines various techniques to promote healing, improve circulation, and restore balance to your body's natural alignment.
+                        Tratamiento enfocado en aliviar tensiones musculares específicas y puntos de dolor. Combina técnicas para promover la curación, mejorar la circulación y restaurar el equilibrio natural de tu cuerpo.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('TherapeuticClick', 'Therapeutic Massage', 'therapeutic'); trackCalendlyReserva('therapeutic_massage', 260000); openCalendlyTherapeutic()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Terapéutico', 900)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/DeepTissue.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="tejidoprofundo.jpeg" alt="Masaje de Tejido Profundo Deep Tissue Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Deep Tissue Massage</div>
+                    <div class="service-title">Masaje de Tejido Profundo</div>
                     <div class="service-description">
-                        Intensive therapy targeting deeper muscle layers and chronic tension points. Using firm pressure and slow strokes, this treatment helps release muscle knots, improve mobility, and alleviate persistent pain in neck, back, shoulders, and legs.
+                        Terapia intensiva para capas musculares profundas y tensión crónica. Presión firme y movimientos lentos que liberan nudos musculares, mejoran la movilidad y alivian dolor persistente en cuello, espalda, hombros y piernas.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('DeepTissueClick', 'Deep Tissue Massage', 'deep_tissue'); trackCalendlyReserva('deep_tissue_massage', 260000); openCalendlyDeepTissue()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Tejido Profundo', 900)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Deportivo.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="deportivo.jpeg" alt="Masaje Deportivo para atletas Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Sports Massage</div>
+                    <div class="service-title">Masaje Deportivo</div>
                     <div class="service-description">
-                        Designed for active individuals and athletes. This treatment focuses on specific muscle groups to enhance performance, prevent injuries, and accelerate recovery. Includes stretching techniques and targeted pressure on overworked areas.
+                        Diseñado para personas activas y atletas. Se enfoca en grupos musculares específicos para mejorar el rendimiento, prevenir lesiones y acelerar la recuperación. Incluye estiramientos y presión dirigida.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('SportsClick', 'Sports Massage', 'sports'); trackCalendlyReserva('sports_massage', 260000); openCalendlySports()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Deportivo', 900)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Terapeutico.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="relajante.jpg" alt="Masaje Relajante con aromaterapia en Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Relaxing Massage</div>
+                    <div class="service-title">Masaje Relajante</div>
                     <div class="service-description">
-                        A gentle, stress-relieving experience designed to calm the mind and deeply relax the body. Using smooth, flowing movements combined with aromatherapy and warm oils to improve circulation and create a sense of complete tranquility.
+                        Experiencia suave y liberadora de estrés que calma la mente y relaja profundamente el cuerpo. Movimientos envolventes, aromaterapia y aceites tibios para crear una sensación de tranquilidad completa.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('RelaxingClick', 'Relaxing Massage', 'relaxing'); trackCalendlyReserva('relaxing_massage', 260000); openCalendlyRelaxing()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Relajante', 900)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Couple.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="imagen.jpg" alt="Masaje en Pareja sala privada Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Couple's Massage</div>
+                    <div class="service-title">Masaje en Pareja</div>
                     <div class="service-description">
-                        Share a romantic and relaxing experience together. Enjoy simultaneous massages in a tranquil setting designed for two, perfect for couples looking to reconnect and unwind together in a peaceful atmosphere.
+                        Comparte una experiencia romántica y relajante juntos. Masajes simultáneos en un entorno tranquilo diseñado para dos. Perfecto para reconectar y relajarse en una atmósfera pacífica.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('CoupleClick', 'Couple Massage', 'couple'); trackCalendlyReserva('couple_massage', 520000); openCalendlyCouple()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje en Pareja', 1800)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Cupping.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="masaje2.jpg" alt="Masaje con Ventosas Cupping Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Cupping Massage</div>
+                    <div class="service-title">Masaje con Ventosas</div>
                     <div class="service-description">
-                        Ancient healing technique using specialized cups to create suction on the skin. This treatment improves blood flow, reduces muscle tension, promotes healing, and helps release toxins from deep tissue layers.
+                        Técnica ancestral con copas especializadas que crean succión en la piel. Mejora el flujo sanguíneo, reduce la tensión muscular, promueve la curación y libera toxinas de capas profundas del tejido.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('CuppingClick', 'Cupping Massage', 'cupping'); trackCalendlyReserva('cupping_massage', 260000); openCalendlyCupping()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje con Ventosas', 900)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Prenatal.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="prenatal.jpeg" alt="Masaje Prenatal para embarazadas Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Prenatal Massage</div>
+                    <div class="service-title">Masaje Prenatal</div>
                     <div class="service-description">
-                        Gentle and safe massage specially designed for expecting mothers. Relieves lower back pain, leg swelling, shoulder tension, and improves circulation. Performed with comfortable positioning and techniques adapted to each pregnancy stage.
+                        Masaje suave y seguro diseñado para futuras madres. Alivia dolor lumbar, hinchazón en piernas, tensión en hombros y mejora la circulación. Posicionamiento cómodo y técnicas adaptadas a cada etapa del embarazo.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('PrenatalClick', 'Prenatal Massage', 'prenatal'); trackCalendlyReserva('prenatal_massage', 260000); openCalendlyPrenatal()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Prenatal', 900)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/PostPartum.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="prenatal.jpeg" alt="Masaje Postparto recuperación Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Postpartum Massage</div>
+                    <div class="service-title">Masaje Postparto</div>
                     <div class="service-description">
-                        Specialized treatment for new mothers to help the body recover after childbirth. Focuses on relieving muscle tension, improving circulation, reducing swelling, and providing emotional support during this important transition period.
+                        Tratamiento especializado para ayudar al cuerpo a recuperarse después del parto. Alivia tensión muscular, mejora la circulación, reduce la hinchazón y brinda apoyo emocional durante esta transición importante.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('PostpartumClick', 'Postpartum Massage', 'postpartum'); trackCalendlyReserva('postpartum_massage', 260000); openCalendlyPostpartum()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Postparto', 900)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Descontracturante.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="1.jpeg" alt="Masaje Descontracturante liberación muscular Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Decontracting Massage</div>
+                    <div class="service-title">Masaje Descontracturante</div>
                     <div class="service-description">
-                        Therapeutic treatment specifically designed to release muscle contractures and chronic tension. Uses targeted pressure and specialized techniques to restore muscle flexibility and eliminate pain caused by prolonged stress or poor posture.
+                        Tratamiento terapéutico para liberar contracturas musculares y tensión crónica. Presión dirigida y técnicas especializadas que restauran la flexibilidad muscular y eliminan dolor por estrés o mala postura.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('DecontractingClick', 'Decontracting Massage', 'decontracting'); trackCalendlyReserva('decontracting_massage', 260000); openCalendlyDecontracting()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Descontracturante', 900)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/HotStone.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="5.jpg" alt="Masaje con Piedras Calientes Hot Stone Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Hot Stone Massage</div>
+                    <div class="service-title">Masaje con Piedras Calientes</div>
                     <div class="service-description">
-                        Luxurious treatment combining traditional massage with heated volcanic stones. The warm stones help penetrate deep into muscles, melting away tension and stress while promoting profound relaxation and improved circulation.
+                        Tratamiento lujoso que combina masaje tradicional con piedras volcánicas calentadas. Las piedras penetran profundamente en los músculos, derritiendo tensión y estrés, promoviendo relajación profunda y mejor circulación.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('HotStoneClick', 'Hot Stone Massage', 'hot_stone'); trackCalendlyReserva('hot_stone_massage', 260000); openCalendlyHotStone()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Piedras Calientes', 900)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/DeepTissue.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="6.jpeg" alt="Masaje con Decoración Especial ocasiones especiales Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Special Decoration Massage</div>
+                    <div class="service-title">Masaje con Decoración Especial</div>
                     <div class="service-description">
-                        A uniquely personalized massage experience enhanced with special ambiance and decorative elements. Perfect for celebrations, special occasions, or when you want to create memorable moments in a beautifully customized setting.
+                        Experiencia única mejorada con ambiente especial y elementos decorativos. Perfecto para celebraciones, ocasiones especiales o para crear momentos memorables en un entorno bellamente personalizado.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('SpecialDecorationClick', 'Special Decoration Massage', 'special_decoration'); trackCalendlyReserva('special_decoration_massage', 260000); openCalendlySpecialDecoration()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Decoración Especial', 1200)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/HotCandle.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="7.jpeg" alt="Masaje con Velas Calientes cera tibia Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Hot Candle Massage</div>
+                    <div class="service-title">Masaje con Velas Calientes</div>
                     <div class="service-description">
-                        Indulgent treatment using warm, melted candle wax that transforms into luxurious massage oil. The warm wax deeply nourishes the skin while providing a sensory experience that combines aromatherapy with deeply relaxing massage techniques.
+                        Tratamiento indulgente con cera de vela tibia que se transforma en aceite lujoso. La cera nutre profundamente la piel mientras proporciona experiencia sensorial que combina aromaterapia con técnicas profundamente relajantes.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('HotCandleClick', 'Hot Candle Massage', 'hot_candle'); trackCalendlyReserva('hot_candle_massage', 260000); openCalendlyHotCandle()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje con Velas Calientes', 1000)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/LomiLomi.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="7.jpg" alt="Masaje Lomi Lomi hawaiano tradicional Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Lomi Lomi Massage</div>
+                    <div class="service-title">Masaje Lomi Lomi</div>
                     <div class="service-description">
-                        Traditional Hawaiian massage technique using flowing, rhythmic movements that mimic ocean waves. This holistic treatment works on physical, mental, and spiritual levels, promoting deep relaxation and energy flow throughout the body.
+                        Técnica tradicional hawaiana con movimientos fluidos y rítmicos que imitan las olas del océano. Tratamiento holístico que trabaja a nivel físico, mental y espiritual, promoviendo relajación profunda y flujo de energía.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('LomiLomiClick', 'Lomi Lomi Massage', 'lomi_lomi'); trackCalendlyReserva('lomi_lomi_massage', 260000); openCalendlyLomiLomi()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Lomi Lomi', 1000)">Reservar por WhatsApp</button>
                 </div>
             </div>
 
-            <!-- Tab 4 Hands Massage -->
+            <!-- TAB: 4 MANOS -->
             <div id="four-hands" class="tab-content">
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/4Hands.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="9.jpg" alt="Masaje a 4 Manos dos terapeutas sincronizados Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">4 Hands Massage</div>
+                    <div class="service-title">Masaje a 4 Manos</div>
                     <div class="service-description">
-                        Experience the ultimate in luxury and relaxation with our signature 4 hands massage. Two skilled therapists work in perfect synchronization to provide a deeply immersive and therapeutic experience. The coordinated movements create a unique sensation that enhances relaxation and promotes faster muscle recovery. This premium treatment offers unparalleled stress relief and leaves you feeling completely rejuvenated.
+                        Lo último en lujo y relajación. Dos terapeutas expertos trabajan en perfecta sincronización para brindarte una experiencia profundamente inmersiva y terapéutica. Los movimientos coordinados crean una sensación única que mejora la relajación y acelera la recuperación muscular. Tratamiento premium que te deja completamente rejuvenecido.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('FourHandsClick', '4 Hands Massage', 'four_hands'); trackCalendlyReserva('four_hands_massage', 454000); openCalendlyFourHands()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje a 4 Manos', 1500)">Reservar por WhatsApp</button>
                 </div>
             </div>
 
-            <!-- Tab Facials -->
+            <!-- TAB: FACIALES -->
             <div id="facials" class="tab-content">
+
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="facial.jpg" alt="Limpieza Facial Básica Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Basic Facial Cleansing</div>
+                    <div class="service-title">Limpieza Facial Básica</div>
                     <div class="service-description">
-                        Essential facial treatment including deep cleansing, gentle exfoliation for luminosity, light blackhead extraction, customized mask (calming, hydrating, or purifying), toning, moisturizing, and sun protection application. Perfect for maintaining healthy, glowing skin.
+                        Tratamiento facial esencial: limpieza profunda, exfoliación suave, extracción ligera de puntos negros, mascarilla personalizada (calmante, hidratante o purificante), tonificación, hidratación y protección solar. Perfecto para mantener una piel saludable y radiante.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('BasicFacialClick', 'Basic Facial Cleansing', 'basic_facial'); trackCalendlyReserva('basic_facial_cleansing', 200000); openCalendlyBasicFacial()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Limpieza Facial Básica', 700)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial2.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="facial1.jpeg" alt="Limpieza Facial Profunda con extracción Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Deep Facial Cleansing</div>
+                    <div class="service-title">Limpieza Facial Profunda</div>
                     <div class="service-description">
-                        Comprehensive facial treatment featuring personalized skin analysis, facial yoga session, deep cleansing, activated charcoal exfoliation, enzymatic peeling mask, thorough impurity extraction, aloe vera calming mask, cryotherapy, lymphatic drainage, high-hydration mask, collagen veil, jade roller treatment, and sun protection.
+                        Tratamiento integral con análisis personalizado, yoga facial, limpieza profunda, exfoliación con carbón activado, peeling enzimático, extracción completa de impurezas, mascarilla de aloe vera, crioterapia, drenaje linfático, mascarilla de alta hidratación, velo de colágeno y rodillo de jade.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('DeepFacialClick', 'Deep Facial Cleansing', 'deep_facial'); trackCalendlyReserva('deep_facial_cleansing', 236000); openCalendlyDeepFacial()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Limpieza Facial Profunda', 900)">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
                     <div class="service-image">
-                        <video autoplay muted loop playsinline class="service-video">
-                            <source src="Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial3.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
+                        <img src="facial2.jpeg" alt="Tratamiento Hidrofacial piel porcelana Oaxaca" loading="lazy">
                     </div>
-                    <div class="service-title">Hydrofacial Treatment</div>
+                    <div class="service-title">Tratamiento Hidrofacial</div>
                     <div class="service-description">
-                        Premium facial treatment designed to achieve porcelain-like skin perfection. Includes advanced cleansing techniques, specialized exfoliation, customized treatment masks, professional extractions, rejuvenating serums, facial massage for immediate glow effect, intensive hydration, and protective finishing. Ideal for special occasions or when you want flawless, radiant skin.
+                        Tratamiento facial premium para una piel tipo porcelana. Técnicas de limpieza avanzadas, exfoliación especializada, mascarillas personalizadas, extracciones profesionales, sueros rejuvenecedores, masaje facial para brillo inmediato, hidratación intensiva y acabado protector. Ideal para ocasiones especiales.
                     </div>
-                    <button class="btn-availability" onclick="fbqTrackCustomEvent('HydrofacialClick', 'Hydrofacial Treatment', 'hydrofacial'); trackCalendlyReserva('hydrofacial_treatment', 270000); openCalendlyHydrofacial()">Book Now</button>
+                    <button class="btn-availability" onclick="return reservarServicio('Tratamiento Hidrofacial', 1200)">Reservar por WhatsApp</button>
                 </div>
             </div>
         </section>
 
+        <!-- TESTIMONIOS -->
+        <section class="testimonials-section fade-in">
+            <div class="section-eyebrow">Clientes Felices</div>
+            <h2>Lo que <em>dicen</em> de nosotros</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Una experiencia increíble. El masaje descontracturante fue exactamente lo que necesitaba después de una semana pesada. Terapeuta muy profesional y el ambiente del spa es hermoso."
+                    </p>
+                    <div class="testimonial-author">María Fernanda R.</div>
+                    <div class="testimonial-meta">Masaje Descontracturante</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Fuimos con mi esposa a celebrar nuestro aniversario y el masaje en pareja superó todas las expectativas. La sala es privada, íntima y el detalle de la decoración especial fue hermoso. 100% recomendado."
+                    </p>
+                    <div class="testimonial-author">Carlos M.</div>
+                    <div class="testimonial-meta">Masaje en Pareja</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Visité Oaxaca de vacaciones y encontré Avani en Google. Qué acierto. El hidrofacial me dejó la piel radiante y el trato de todo el equipo fue excelente. Regresaré en mi próximo viaje."
+                    </p>
+                    <div class="testimonial-author">Laura T.</div>
+                    <div class="testimonial-meta">Tratamiento Hidrofacial</div>
+                </div>
+            </div>
+        </section>
 
-        <section class="location-section">
-            <h2>relaxation specialists</h2>
+        <!-- GALERÍA -->
+        <section class="location-section fade-in">
+            <h2>Nuestras Instalaciones</h2>
             <div class="image-gallery">
-                <div class="gallery-item">
-                <img src="45.jpeg" alt="Instalación 1">
+                <div class="gallery-item"><img src="/imagen2.png" alt="Instalaciones Avani Spa Oaxaca 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="/imagen3.png" alt="Instalaciones Avani Spa Oaxaca 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="/imagen4.png" alt="Instalaciones Avani Spa Oaxaca 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="/imagen5.png" alt="Instalaciones Avani Spa Oaxaca 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="/imagen7.jpg" alt="Instalaciones Avani Spa Oaxaca 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="/logo.png" alt="Instalaciones Avani Spa Oaxaca 6" loading="lazy"></div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section fade-in">
+            <div class="section-eyebrow">Preguntas Frecuentes</div>
+            <h2>Todo lo que necesitas <em>saber</em></h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Necesito reservar con anticipación?</div>
+                <div class="faq-answer">
+                    Recomendamos reservar al menos con 24 horas de anticipación para garantizar disponibilidad, especialmente los fines de semana. Puedes reservar por WhatsApp al <a href="tel:+5219514751189" style="color:var(--avani-gold);">951 475 1189</a> y te confirmamos horarios al instante.
                 </div>
-                <div class="gallery-item">
-                <img src="1.jpeg" alt="Instalación 2">
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Qué incluye cada masaje?</div>
+                <div class="faq-answer">
+                    Todos nuestros masajes incluyen acceso a la sala privada, aceites esenciales premium, aromaterapia, toallas calientes, música relajante en frecuencia 528 Hz y un espacio tranquilo para descansar al terminar. Cada servicio dura entre 60 y 90 minutos según la técnica.
                 </div>
-                <div class="gallery-item">
-                <img src="5.jpg" alt="Instalación 3">
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Qué debo llevar?</div>
+                <div class="faq-answer">
+                    Solo tu mejor disposición para relajarte. Nosotros proporcionamos todo lo necesario: batas, toallas, sandalias y productos. Te recomendamos llegar 10 minutos antes de tu cita para que puedas cambiarte con calma.
                 </div>
-                <div class="gallery-item">
-                <img src="7.jpg" alt="Instalación 4">
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Tienen opciones para parejas?</div>
+                <div class="faq-answer">
+                    Sí. Contamos con una sala especial diseñada para dos personas donde puedes disfrutar de un masaje simultáneo con tu pareja. Además tenemos el servicio de "Masaje con Decoración Especial", perfecto para aniversarios, propuestas o celebraciones.
                 </div>
-                <div class="gallery-item">
-                <img src="9.jpg" alt="Instalación 4">
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Dónde están ubicados exactamente?</div>
+                <div class="faq-answer">
+                    Estamos en el Centro Histórico de Oaxaca, en Quetzalcoatl #121, Col. Centro. A pocos minutos caminando del Zócalo. Fácil acceso en auto, taxi o a pie si estás hospedado en el centro.
                 </div>
-                <div class="gallery-item">
-                <img src="imagen.jpg" alt="Instalación 4">
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Cuál es la política de cancelación?</div>
+                <div class="faq-answer">
+                    Pedimos que las cancelaciones se hagan con al menos 4 horas de anticipación por WhatsApp, para poder ofrecer ese horario a otros clientes. Reagendar tu cita no tiene costo si nos avisas con tiempo.
                 </div>
-                <div class="gallery-item">
-                <img src="7.jpeg" alt="Instalación 4">
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Aceptan tarjeta de crédito o solo efectivo?</div>
+                <div class="faq-answer">
+                    Aceptamos pagos en efectivo, transferencia y tarjetas de crédito/débito (Visa, Mastercard, American Express). Escríbenos por WhatsApp si tienes alguna pregunta específica sobre pagos.
                 </div>
             </div>
         </section>
-        
-        
 
-        <div class="divider"></div>
+        <!-- UBICACIÓN -->
+        <section class="location-full fade-in">
+            <div class="section-eyebrow">Encuéntranos</div>
+            <h2>En el <em>corazón</em> de Oaxaca</h2>
+            <div class="location-grid">
+                <div class="location-info">
+                    <div class="info-row">
+                        <span class="info-icon">◉</span>
+                        <div>
+                            <strong>Dirección</strong>
+                            Quetzalcoatl #121, Col. Centro<br>
+                            Oaxaca de Juárez, Oaxaca, México
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon">⌘</span>
+                        <div>
+                            <strong>Horario</strong>
+                            Lunes a Sábado<br>
+                            10:00 a.m. - 8:00 p.m.
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon">☏</span>
+                        <div>
+                            <strong>Teléfono / WhatsApp</strong>
+                            <a href="tel:+5219514751189">+52 951 475 1189</a>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon">✦</span>
+                        <div>
+                            <strong>¿Primera visita?</strong>
+                            Escríbenos por WhatsApp y te asesoramos para elegir el servicio ideal según lo que tu cuerpo necesita hoy.
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.0992308864866!2d-96.72527199999999!3d17.067798199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c7233915acf633%3A0x5efea6c0943f47d1!2sAvani%20Spa%20oaxaca!5e0!3m2!1ses-419!2sco!4v1776804033993!5m2!1ses-419!2sco"
+                            width="100%"
+                            height="380"
+                            style="border:0; border-radius: 14px;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación Avani Spa Oaxaca">
+                    </iframe>
+                </div>
+            </div>
+        </section>
 
+        <!-- CTA FINAL -->
+        <section class="final-cta">
+            <div class="section-eyebrow">Reserva Ahora</div>
+            <h2>Tu momento de <em>paz</em> te está esperando</h2>
+            <p>
+                Tu cuerpo carga tensión que no tienes que seguir llevando.
+                Déjanos ayudarte a soltarla. Reserva tu sesión por WhatsApp y te confirmamos disponibilidad al instante.
+            </p>
+            <button class="btn-whatsapp-large" onclick="return contactoGeneral('final_cta')">
+                Reservar por WhatsApp
+            </button>
+        </section>
+
+        <!-- FOOTER -->
         <footer>
             <p class="gold-text">© 2026 Avani Spa &amp; Massage</p>
-            <p>All rights reserved</p>
+            <p>All rights reserved · Todos los derechos reservados</p>
             <p style="margin-top: 15px;">Oaxaca de Juárez, México</p>
             <p style="margin-top: 5px;">Quetzalcoatl #121, Col. Centro</p>
-            <p style="margin-top: 5px;"><a href="tel:+5219514751189" style="color: #DAA520;">951 475 1189</a></p>
+            <p style="margin-top: 5px;">
+                <a href="tel:+5219514751189" style="color: #DAA520;">+52 951 475 1189</a>
+            </p>
             <p style="margin-top: 10px; color: #DAA520;">Your luxury destination for wellness and relaxation</p>
         </footer>
 
-        <div class="floating-whatsapp" onclick="return trackWhatsAppLead('https://wa.me/5219514751189?text=' + encodeURIComponent('Hola Avani Spa, me gustaría información sobre los servicios 🌿✨'), 'floating_button_spa')"></div>
+        <!-- Botón flotante de WhatsApp (logo visible + pulso + tracking) -->
+        <div class="floating-whatsapp" onclick="return contactoGeneral('floating_button')" role="button" aria-label="Contactar por WhatsApp" title="Reservar por WhatsApp"></div>
+
+        <!-- POPUP DE OFERTA - DESCOMENTAR PARA REACTIVAR -->
+        <!--
+        <div class="welcome-popup" id="welcomePopup">
+            <button class="popup-close" onclick="document.getElementById('welcomePopup').style.display='none'">×</button>
+            <h4>✦ 10% en tu primera visita</h4>
+            <p>Menciona este mensaje al reservar por WhatsApp y obtén 10% de descuento en tu primer servicio.</p>
+            <button class="btn-whatsapp-large" style="padding: 0.7rem 1.5rem; font-size: 0.9rem;" onclick="return contactoGeneral('popup_oferta')">Reservar con Descuento</button>
+        </div>
+        -->
+
         </div>
     </div>
 
 <script>
-    // Control de música de fondo
+    // ═══ AUDIO DE FONDO ═══
     const bgMusic = document.getElementById('bgMusic');
     const audioControl = document.getElementById('audioControl');
     let isPlaying = false;
 
-    // Función para iniciar música
     function startMusic() {
         bgMusic.play().then(() => {
             isPlaying = true;
             audioControl.classList.add('playing');
             audioControl.classList.remove('paused');
-        }).catch((error) => {
-            console.log('Autoplay bloqueado:', error);
+        }).catch((err) => {
             isPlaying = false;
             audioControl.classList.add('paused');
             audioControl.classList.remove('playing');
         });
     }
 
-    // Intentar reproducir música automáticamente cuando carga la página
     window.addEventListener('load', () => {
-        // Establecer volumen bajo para mejor experiencia
         bgMusic.volume = 0.3;
         startMusic();
     });
 
-    // Intentar reproducir en el primer click/interacción del usuario
     document.addEventListener('click', function initAudio() {
-        if (!isPlaying) {
-            startMusic();
-        }
-        // Remover el listener después del primer click
+        if (!isPlaying) startMusic();
         document.removeEventListener('click', initAudio);
     }, { once: true });
 
-    // También intentar con scroll
     document.addEventListener('scroll', function initAudioScroll() {
-        if (!isPlaying) {
-            startMusic();
-        }
+        if (!isPlaying) startMusic();
         document.removeEventListener('scroll', initAudioScroll);
     }, { once: true });
 
-    // Control manual de audio
     audioControl.addEventListener('click', (e) => {
-        e.stopPropagation(); // Evitar que dispare otros eventos
+        e.stopPropagation();
         if (isPlaying) {
             bgMusic.pause();
             isPlaying = false;
@@ -573,20 +1313,19 @@
         }
     });
 
-    // Funciones de navegación
-    function showTab(tabName) {
+    // ═══ TABS ═══
+    function showTab(tabName, btnEl) {
         const tabs = document.querySelectorAll('.tab');
         const contents = document.querySelectorAll('.tab-content');
-        
-        tabs.forEach(tab => tab.classList.remove('active'));
-        contents.forEach(content => content.classList.remove('active'));
-        
-        event.target.classList.add('active');
+
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        if (btnEl) btnEl.classList.add('active');
         document.getElementById(tabName).classList.add('active');
-        
-        // Scroll suave al contenido
+
         setTimeout(() => {
-            document.getElementById(tabName).scrollIntoView({ 
+            document.getElementById(tabName).scrollIntoView({
                 behavior: 'smooth',
                 block: 'nearest'
             });
@@ -594,173 +1333,83 @@
     }
 
     function scrollToServices() {
-        document.getElementById('servicios').scrollIntoView({ 
-            behavior: 'smooth'
+        document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ═══ FAQ ACCORDION ═══
+    function toggleFaq(el) {
+        const item = el.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+    }
+
+    // ═══ SCROLL ANIMATIONS ═══
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                fadeObserver.unobserve(entry.target);
+            }
         });
-    }
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-    // FUNCIONES DE RESERVA POR WHATSAPP (antes Calendly) - TRACKING YA INTEGRADO EN LOS BOTONES
-    // Número de WhatsApp para reservas del catálogo
-    var WHATSAPP_RESERVA_NUMBER = '5219514751189';
+    document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
-    // Abre WhatsApp con un mensaje pre-rellenado incluyendo el servicio seleccionado
-    function openWhatsAppReserva(serviceName) {
-        var message = 'Hola Avani Spa, me gustaría reservar el servicio: ' + serviceName + '. ¿Tienen disponibilidad?';
-        var url = 'https://wa.me/' + WHATSAPP_RESERVA_NUMBER + '?text=' + encodeURIComponent(message);
-        window.open(url, '_blank');
-        return false;
-    }
-
-    function openCalendlyTherapeutic()       { return openWhatsAppReserva('Therapeutic Massage'); }
-    function openCalendlyDeepTissue()        { return openWhatsAppReserva('Deep Tissue Massage'); }
-    function openCalendlySports()            { return openWhatsAppReserva('Sports Massage'); }
-    function openCalendlyRelaxing()          { return openWhatsAppReserva('Relaxing Massage'); }
-    function openCalendlyCouple()            { return openWhatsAppReserva('Couples Massage'); }
-    function openCalendlyCupping()           { return openWhatsAppReserva('Cupping Massage'); }
-    function openCalendlyPrenatal()          { return openWhatsAppReserva('Prenatal Massage'); }
-    function openCalendlyPostpartum()        { return openWhatsAppReserva('Postpartum Massage'); }
-    function openCalendlyDecontracting()     { return openWhatsAppReserva('Decontracting Massage'); }
-    function openCalendlyHotStone()          { return openWhatsAppReserva('Hot Stone Massage'); }
-    function openCalendlyHotCandle()         { return openWhatsAppReserva('Hot Candle Massage'); }
-    function openCalendlyLomiLomi()          { return openWhatsAppReserva('Lomi Lomi Massage'); }
-    function openCalendlySpecialDecoration() { return openWhatsAppReserva('Special Decoration Massage'); }
-    function openCalendlyFourHands()         { return openWhatsAppReserva('4 Hands Massage'); }
-    function openCalendlyBasicFacial()       { return openWhatsAppReserva('Basic Facial Cleansing'); }
-    function openCalendlyDeepFacial()        { return openWhatsAppReserva('Deep Facial Cleansing'); }
-    function openCalendlyHydrofacial()       { return openWhatsAppReserva('Hydrofacial Treatment'); }
-
-
-    // Efecto parallax suave en scroll
+    // ═══ PARALLAX SUTIL ═══
     let ticking = false;
     window.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
                 const scrolled = window.pageYOffset;
-                const parallaxElements = document.querySelectorAll('.service-card');
-                
-                parallaxElements.forEach((element, index) => {
+                document.querySelectorAll('.service-card').forEach((el) => {
                     const speed = 0.5;
                     const yPos = -(scrolled * speed);
-                    element.style.transform = `translateY(${yPos * 0.02}px)`;
+                    el.style.transform = `translateY(${yPos * 0.015}px)`;
                 });
-                
                 ticking = false;
             });
             ticking = true;
         }
     });
 
+    // ═══ DEBUG TRACKING ═══
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof fbq === 'function') console.log('✓ Meta Pixel OK');
+        if (typeof gtag === 'function') console.log('✓ Google Tags OK - AW-17964636350');
+    });
 
-
-    // Sistema de traducción
+    // ═══ SISTEMA DE IDIOMAS ═══
     const translations = {
         en: {
-            title: "Welcome to Avani Spa & Massage",
-            subtitle: "Your Luxury Wellness and Relaxation Oasis in Oaxaca",
+            title: "Massages in Oaxaca Centro",
+            highlight: "Oaxaca Centro",
+            subtitle: "Your luxury oasis for wellness and relaxation in the heart of the historic city",
             bookNow: "BOOK NOW",
+            bookWhatsApp: "Book on WhatsApp",
             viewServices: "View Services",
             ourServices: "Our Services",
             massages: "Massages",
             fourHands: "4 Hands Massage",
             facialTreatments: "Facial Treatments",
-            relaxationSpecialists: "relaxation specialists",
-            infoText: "Located in the Historic Center of Oaxaca, Quetzalcoatl #121, Col. Centro, our spa is easily accessible and designed to offer you a unique wellness experience with all the amenities to make your visit perfect.",
-            schedule: "We're open Monday to Saturday from 10:00 a.m. to 8:00 p.m.",
-            // Servicios de masajes
-            therapeuticMassage: "Therapeutic Massage",
-            deepTissueMassage: "Deep Tissue Massage",
-            sportsMassage: "Sports Massage",
-            relaxingMassage: "Relaxing Massage",
-            couplesMassage: "Couple's Massage",
-            cuppingMassage: "Cupping Massage",
-            prenatalMassage: "Prenatal Massage",
-            postpartumMassage: "Postpartum Massage",
-            decontractingMassage: "Decontracting Massage",
-            hotStoneMassage: "Hot Stone Massage",
-            specialDecorationMassage: "Special Decoration Massage",
-            hotCandleMassage: "Hot Candle Massage",
-            lomiLomiMassage: "Lomi Lomi Massage",
-            fourHandsMassage: "4 Hands Massage",
-            basicFacialCleansing: "Basic Facial Cleansing",
-            deepFacialCleansing: "Deep Facial Cleansing",
-            hydrofacialTreatment: "Hydrofacial Treatment",
-            duration: "Duration",
-            minutes: "Minutes",
-            hour: "Hour",
-            hours: "Hours",
-
-            // Descripciones de servicios en inglés
-            therapeuticDesc: "A focused treatment designed to address specific muscle tension and pain points. Our therapeutic approach combines various techniques to promote healing, improve circulation, and restore balance to your body's natural alignment.",
-            deepTissueDesc: "Intensive therapy targeting deeper muscle layers and chronic tension points. Using firm pressure and slow strokes, this treatment helps release muscle knots, improve mobility, and alleviate persistent pain in neck, back, shoulders, and legs.",
-            sportsDesc: "Designed for active individuals and athletes. This treatment focuses on specific muscle groups to enhance performance, prevent injuries, and accelerate recovery. Includes stretching techniques and targeted pressure on overworked areas.",
-            relaxingDesc: "A gentle, stress-relieving experience designed to calm the mind and deeply relax the body. Using smooth, flowing movements combined with aromatherapy and warm oils to improve circulation and create a sense of complete tranquility.",
-            couplesDesc: "Share a romantic and relaxing experience together. Enjoy simultaneous massages in a tranquil setting designed for two, perfect for couples looking to reconnect and unwind together in a peaceful atmosphere.",
-            cuppingDesc: "Ancient healing technique using specialized cups to create suction on the skin. This treatment improves blood flow, reduces muscle tension, promotes healing, and helps release toxins from deep tissue layers.",
-            prenatalDesc: "Gentle and safe massage specially designed for expecting mothers. Relieves lower back pain, leg swelling, shoulder tension, and improves circulation. Performed with comfortable positioning and techniques adapted to each pregnancy stage.",
-            postpartumDesc: "Specialized treatment for new mothers to help the body recover after childbirth. Focuses on relieving muscle tension, improving circulation, reducing swelling, and providing emotional support during this important transition period.",
-            decontractingDesc: "Therapeutic treatment specifically designed to release muscle contractures and chronic tension. Uses targeted pressure and specialized techniques to restore muscle flexibility and eliminate pain caused by prolonged stress or poor posture.",
-            hotStoneDesc: "Luxurious treatment combining traditional massage with heated volcanic stones. The warm stones help penetrate deep into muscles, melting away tension and stress while promoting profound relaxation and improved circulation.",
-            specialDecorationDesc: "A uniquely personalized massage experience enhanced with special ambiance and decorative elements. Perfect for celebrations, special occasions, or when you want to create memorable moments in a beautifully customized setting.",
-            hotCandleDesc: "Indulgent treatment using warm, melted candle wax that transforms into luxurious massage oil. The warm wax deeply nourishes the skin while providing a sensory experience that combines aromatherapy with deeply relaxing massage techniques.",
-            lomiLomiDesc: "Traditional Hawaiian massage technique using flowing, rhythmic movements that mimic ocean waves. This holistic treatment works on physical, mental, and spiritual levels, promoting deep relaxation and energy flow throughout the body.",
-            fourHandsDesc: "Experience the ultimate in luxury and relaxation with our signature 4 hands massage. Two skilled therapists work in perfect synchronization to provide a deeply immersive and therapeutic experience. The coordinated movements create a unique sensation that enhances relaxation and promotes faster muscle recovery.",
-            basicFacialDesc: "Essential facial treatment including deep cleansing, gentle exfoliation for luminosity, light blackhead extraction, customized mask (calming, hydrating, or purifying), toning, moisturizing, and sun protection application. Perfect for maintaining healthy, glowing skin.",
-            deepFacialDesc: "Comprehensive facial treatment featuring personalized skin analysis, facial yoga session, deep cleansing, activated charcoal exfoliation, enzymatic peeling mask, thorough impurity extraction, aloe vera calming mask, cryotherapy, lymphatic drainage, high-hydration mask, collagen veil, jade roller treatment, and sun protection.",
-            hydrofacialDesc: "Premium facial treatment designed to achieve porcelain-like skin perfection. Includes advanced cleansing techniques, specialized exfoliation, customized treatment masks, professional extractions, rejuvenating serums, facial massage for immediate glow effect, intensive hydration, and protective finishing."
+            ourInstallations: "Our Facilities",
+            infoText: "Located on Quetzalcoatl #121, Col. Centro. A space designed to offer you a unique wellness experience, with professional therapists and premium products.",
+            schedule: "Open Monday to Saturday · 10:00 a.m. to 8:00 p.m.",
         },
         es: {
-            title: "Bienvenido a Avani Spa & Massage",
-            subtitle: "Tu Oasis de Lujo para el Bienestar y la Relajación en Oaxaca",
+            title: "Masajes en",
+            highlight: "Oaxaca Centro",
+            subtitle: "Tu oasis de lujo para el bienestar y la relajación en el corazón histórico de la ciudad",
             bookNow: "RESERVAR",
+            bookWhatsApp: "Reservar por WhatsApp",
             viewServices: "Ver Servicios",
             ourServices: "Nuestros Servicios",
             massages: "Masajes",
             fourHands: "Masaje 4 Manos",
             facialTreatments: "Tratamientos Faciales",
-            relaxationSpecialists: "especialistas en relajación",
-            infoText: "Ubicado en el Centro Histórico de Oaxaca, Quetzalcoatl #121, Col. Centro, nuestro spa es fácilmente accesible y está diseñado para ofrecerte una experiencia única de bienestar con todas las comodidades para que tu visita sea perfecta.",
-            schedule: "Estamos abiertos de lunes a sábado de 10:00 a.m. a 8:00 p.m.",
-            // Servicios de masajes
-            therapeuticMassage: "Masaje Terapéutico",
-            deepTissueMassage: "Masaje de Tejido Profundo",
-            sportsMassage: "Masaje Deportivo",
-            relaxingMassage: "Masaje Relajante",
-            couplesMassage: "Masaje en Pareja",
-            cuppingMassage: "Masaje con Ventosas",
-            prenatalMassage: "Masaje Prenatal",
-            postpartumMassage: "Masaje Postparto",
-            decontractingMassage: "Masaje Descontracturante",
-            hotStoneMassage: "Masaje con Piedras Calientes",
-            specialDecorationMassage: "Masaje con Decoración Especial",
-            hotCandleMassage: "Masaje con Velas Calientes",
-            lomiLomiMassage: "Masaje Lomi Lomi",
-            fourHandsMassage: "Masaje 4 Manos",
-            basicFacialCleansing: "Limpieza Facial Básica",
-            deepFacialCleansing: "Limpieza Facial Profunda",
-            hydrofacialTreatment: "Tratamiento Hidrofacial",
-            duration: "Duración",
-            minutes: "Minutos",
-            hour: "Hora",
-            hours: "Horas",
-
-            // Descripciones de servicios en español
-            therapeuticDesc: "Un tratamiento enfocado diseñado para abordar tensiones musculares específicas y puntos de dolor. Nuestro enfoque terapéutico combina varias técnicas para promover la curación, mejorar la circulación y restaurar el equilibrio de la alineación natural de tu cuerpo.",
-            deepTissueDesc: "Terapia intensiva dirigida a capas musculares más profundas y puntos de tensión crónica. Usando presión firme y movimientos lentos, este tratamiento ayuda a liberar nudos musculares, mejorar la movilidad y aliviar el dolor persistente en cuello, espalda, hombros y piernas.",
-            sportsDesc: "Diseñado para personas activas y atletas. Este tratamiento se enfoca en grupos musculares específicos para mejorar el rendimiento, prevenir lesiones y acelerar la recuperación. Incluye técnicas de estiramiento y presión dirigida en áreas sobrecargadas.",
-            relaxingDesc: "Una experiencia suave y liberadora del estrés diseñada para calmar la mente y relajar profundamente el cuerpo. Usando movimientos suaves y envolventes combinados con aromaterapia y aceites tibios para mejorar la circulación y crear una sensación de tranquilidad completa.",
-            couplesDesc: "Comparte una experiencia romántica y relajante juntos. Disfruta de masajes simultáneos en un entorno tranquilo diseñado para dos, perfecto para parejas que buscan reconectarse y relajarse juntos en una atmósfera pacífica.",
-            cuppingDesc: "Técnica de curación ancestral que utiliza copas especializadas para crear succión en la piel. Este tratamiento mejora el flujo sanguíneo, reduce la tensión muscular, promueve la curación y ayuda a liberar toxinas de las capas profundas del tejido.",
-            prenatalDesc: "Masaje suave y seguro especialmente diseñado para futuras madres. Alivia el dolor lumbar, la hinchazón en las piernas, la tensión en los hombros y mejora la circulación. Se realiza con posicionamiento cómodo y técnicas adaptadas a cada etapa del embarazo.",
-            postpartumDesc: "Tratamiento especializado para nuevas madres para ayudar al cuerpo a recuperarse después del parto. Se enfoca en aliviar la tensión muscular, mejorar la circulación, reducir la hinchazón y brindar apoyo emocional durante este importante período de transición.",
-            decontractingDesc: "Tratamiento terapéutico específicamente diseñado para liberar contracturas musculares y tensión crónica. Utiliza presión dirigida y técnicas especializadas para restaurar la flexibilidad muscular y eliminar el dolor causado por estrés prolongado o mala postura.",
-            hotStoneDesc: "Tratamiento lujoso que combina masaje tradicional con piedras volcánicas calentadas. Las piedras calientes ayudan a penetrar profundamente en los músculos, derritiendo la tensión y el estrés mientras promueven una relajación profunda y mejoran la circulación.",
-            specialDecorationDesc: "Una experiencia de masaje únicamente personalizada mejorada con ambiente especial y elementos decorativos. Perfecto para celebraciones, ocasiones especiales, o cuando quieres crear momentos memorables en un entorno bellamente personalizado.",
-            hotCandleDesc: "Tratamiento indulgente que utiliza cera de vela tibia derretida que se transforma en aceite de masaje lujoso. La cera tibia nutre profundamente la piel mientras proporciona una experiencia sensorial que combina aromaterapia con técnicas de masaje profundamente relajantes.",
-            lomiLomiDesc: "Técnica de masaje tradicional hawaiana que utiliza movimientos fluidos y rítmicos que imitan las olas del océano. Este tratamiento holístico funciona en niveles físicos, mentales y espirituales, promoviendo relajación profunda y flujo de energía por todo el cuerpo.",
-            fourHandsDesc: "Experimenta lo último en lujo y relajación con nuestro masaje característico de 4 manos. Dos terapeutas expertos trabajan en perfecta sincronización para brindar una experiencia profundamente inmersiva y terapéutica. Los movimientos coordinados crean una sensación única que mejora la relajación y promueve una recuperación muscular más rápida.",
-            basicFacialDesc: "Tratamiento facial esencial que incluye limpieza profunda, exfoliación suave para luminosidad, extracción ligera de puntos negros, mascarilla personalizada (calmante, hidratante o purificante), tonificación, hidratación y aplicación de protección solar. Perfecto para mantener una piel saludable y radiante.",
-            deepFacialDesc: "Tratamiento facial integral que incluye análisis personalizado de la piel, sesión de yoga facial, limpieza profunda, exfoliación con carbón activado, mascarilla peeling enzimático, extracción completa de impurezas, mascarilla calmante de aloe vera, crioterapia, drenaje linfático, mascarilla de alta hidratación, velo de colágeno, tratamiento con rodillo de jade y protección solar.",
-            hydrofacialDesc: "Tratamiento facial premium diseñado para lograr la perfección de piel tipo porcelana. Incluye técnicas de limpieza avanzadas, exfoliación especializada, mascarillas de tratamiento personalizadas, extracciones profesionales, sueros rejuvenecedores, masaje facial para efecto de brillo inmediato, hidratación intensiva y acabado protector."
+            ourInstallations: "Nuestras Instalaciones",
+            infoText: "Ubicados en Quetzalcoatl #121, Col. Centro. Un espacio diseñado para ofrecerte una experiencia de bienestar única, con terapeutas profesionales y productos premium.",
+            schedule: "Abierto de lunes a sábado · 10:00 a.m. a 8:00 p.m.",
         }
     };
 
@@ -768,220 +1417,27 @@
 
     function switchLanguage(lang) {
         currentLanguage = lang;
-        
-        // Actualizar botones activos
-        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
         document.getElementById(lang + '-btn').classList.add('active');
-        
-        // Aplicar traducciones
+        document.documentElement.lang = lang;
+
         const t = translations[lang];
-        
-        // Elementos principales
-        document.querySelector('.hero h1').innerHTML = `${t.title.split('Avani Spa & Massage')[0]}<span class="highlight">Avani Spa &amp; Massage</span>`;
+
+        document.querySelector('.hero h1').innerHTML = `${t.title} <span class="highlight">${t.highlight}</span>`;
         document.querySelector('.hero-subtitle').textContent = t.subtitle;
         document.querySelector('.btn-header').textContent = t.bookNow;
-        document.querySelector('.services-section h2').textContent = t.ourServices;
-        document.querySelector('.location-section h2').textContent = t.relaxationSpecialists;
         document.querySelector('.info-section h3').textContent = t.infoText;
         document.querySelector('.schedule').textContent = t.schedule;
-        
-        // Botones CTA
         document.querySelector('.btn-secondary').textContent = t.viewServices;
-        document.querySelector('.btn-whatsapp').textContent = t.bookNow;
-        
-        // Tabs
-        document.querySelector('.tab[onclick="showTab(\'massages\')"]').textContent = t.massages;
-        document.querySelector('.tab[onclick="showTab(\'four-hands\')"]').textContent = t.fourHands;
-        document.querySelector('.tab[onclick="showTab(\'facials\')"]').textContent = t.facialTreatments;
+        document.querySelector('.btn-whatsapp').textContent = t.bookWhatsApp;
+        document.querySelector('.services-section h2').textContent = t.ourServices;
+        document.querySelector('.location-section h2').textContent = t.ourInstallations;
 
-        // AGREGAR ESTO: Traducir todos los servicios
-        translateServices(t);
+        const tabBtns = document.querySelectorAll('.tab');
+        if (tabBtns[0]) tabBtns[0].textContent = t.massages;
+        if (tabBtns[1]) tabBtns[1].textContent = t.fourHands;
+        if (tabBtns[2]) tabBtns[2].textContent = t.facialTreatments;
     }
-
-    // Agregar esta nueva función después de switchLanguage:
-    function translateServices(t) {
-        const serviceCards = document.querySelectorAll('.service-card');
-        
-        serviceCards.forEach((card, index) => {
-            const title = card.querySelector('.service-title');
-            const description = card.querySelector('.service-description');
-            const bookButton = card.querySelector('.btn-availability');
-
-            // Traducir títulos de servicios
-            if (title) {
-                const titleText = title.textContent.trim();
-                switch (titleText) {
-                    case 'Therapeutic Massage':
-                    case 'Masaje Terapéutico':
-                        title.textContent = t.therapeuticMassage;
-                        description.textContent = t.therapeuticDesc;
-                        break;
-                    case 'Deep Tissue Massage':
-                    case 'Masaje de Tejido Profundo':
-                        title.textContent = t.deepTissueMassage;
-                        description.textContent = t.deepTissueDesc;
-                        break;
-                    case 'Sports Massage':
-                    case 'Masaje Deportivo':
-                        title.textContent = t.sportsMassage;
-                        description.textContent = t.sportsDesc;
-                        break;
-                    case 'Relaxing Massage':
-                    case 'Masaje Relajante':
-                        title.textContent = t.relaxingMassage;
-                        description.textContent = t.relaxingDesc;
-                        break;
-                    case "Couple's Massage":
-                    case 'Masaje en Pareja':
-                        title.textContent = t.couplesMassage;
-                        description.textContent = t.couplesDesc;
-                        break;
-                    case 'Cupping Massage':
-                    case 'Masaje con Ventosas':
-                        title.textContent = t.cuppingMassage;
-                        description.textContent = t.cuppingDesc;
-                        break;
-                    case 'Prenatal Massage':
-                    case 'Masaje Prenatal':
-                        title.textContent = t.prenatalMassage;
-                        description.textContent = t.prenatalDesc;
-                        break;
-                    case 'Postpartum Massage':
-                    case 'Masaje Postparto':
-                        title.textContent = t.postpartumMassage;
-                        description.textContent = t.postpartumDesc;
-                        break;
-                    case 'Decontracting Massage':
-                    case 'Masaje Descontracturante':
-                        title.textContent = t.decontractingMassage;
-                        description.textContent = t.decontractingDesc;
-                        break;
-                    case 'Hot Stone Massage':
-                    case 'Masaje con Piedras Calientes':
-                        title.textContent = t.hotStoneMassage;
-                        description.textContent = t.hotStoneDesc;
-                        break;
-                    case 'Special Decoration Massage':
-                    case 'Masaje con Decoración Especial':
-                        title.textContent = t.specialDecorationMassage;
-                        description.textContent = t.specialDecorationDesc;
-                        break;
-                    case 'Hot Candle Massage':
-                    case 'Masaje con Velas Calientes':
-                        title.textContent = t.hotCandleMassage;
-                        description.textContent = t.hotCandleDesc;
-                        break;
-                    case 'Lomi Lomi Massage':
-                    case 'Masaje Lomi Lomi':
-                        title.textContent = t.lomiLomiMassage;
-                        description.textContent = t.lomiLomiDesc;
-                        break;
-                    case '4 Hands Massage':
-                    case 'Masaje 4 Manos':
-                        title.textContent = t.fourHandsMassage;
-                        description.textContent = t.fourHandsDesc;
-                        break;
-                    case 'Basic Facial Cleansing':
-                    case 'Limpieza Facial Básica':
-                        title.textContent = t.basicFacialCleansing;
-                        description.textContent = t.basicFacialDesc;
-                        break;
-                    case 'Deep Facial Cleansing':
-                    case 'Limpieza Facial Profunda':
-                        title.textContent = t.deepFacialCleansing;
-                        description.textContent = t.deepFacialDesc;
-                        break;
-                    case 'Hydrofacial Treatment':
-                    case 'Tratamiento Hidrofacial':
-                    case 'Facial Porcelain Treatment':
-                    case 'Tratamiento Facial Porcelana':
-                        title.textContent = t.hydrofacialTreatment;
-                        description.textContent = t.hydrofacialDesc;
-                        break;
-                }
-            }
-
-            // Traducir botón Book Now
-            if (bookButton) {
-                bookButton.textContent = t.bookNow;
-            }
-        });
-    
-    
-    }
-
-    // ===========================================
-// LISTENER GLOBAL PARA EVENTOS DE CALENDLY
-// ===========================================
-window.addEventListener('message', function (e) {
-  if (e.data.event && e.data.event.indexOf('calendly') === 0) {
-    console.log('Calendly Event:', e.data.event);
-
-    // Cuando se completa el agendamiento
-    if (e.data.event === 'calendly.event_scheduled') {
-      console.log('¡Cita agendada exitosamente!');
-
-      const eventDetails = e.data.payload;
-      let serviceName = 'Spa Service';
-
-      // Obtener el nombre del servicio desde el URI de Calendly
-      if (eventDetails && eventDetails.event && eventDetails.event.uri) {
-        const uri = eventDetails.event.uri;
-
-        // Extraer el tipo de servicio del URI
-        if (uri.includes('therapeutic')) serviceName = 'Therapeutic Massage';
-        else if (uri.includes('deep-tissue')) serviceName = 'Deep Tissue Massage';
-        else if (uri.includes('sports')) serviceName = 'Sports Massage';
-        else if (uri.includes('relaxing')) serviceName = 'Relaxing Massage';
-        else if (uri.includes('couple')) serviceName = 'Couples Massage';
-        else if (uri.includes('cupping')) serviceName = 'Cupping Massage';
-        else if (uri.includes('prenatal')) serviceName = 'Prenatal Massage';
-        else if (uri.includes('postpartum')) serviceName = 'Postpartum Massage';
-        else if (uri.includes('decontracting')) serviceName = 'Decontracting Massage';
-        else if (uri.includes('hot-stone')) serviceName = 'Hot Stone Massage';
-        else if (uri.includes('hot-candle')) serviceName = 'Hot Candle Massage';
-        else if (uri.includes('lomi-lomi')) serviceName = 'Lomi Lomi Massage';
-        else if (uri.includes('special-decoration')) serviceName = 'Special Decoration Massage';
-        else if (uri.includes('four-hands')) serviceName = '4 Hands Massage';
-        else if (uri.includes('basic-facial')) serviceName = 'Basic Facial Cleansing';
-        else if (uri.includes('deep-facial')) serviceName = 'Deep Facial Cleansing';
-        else if (uri.includes('hydrofacial')) serviceName = 'Hydrofacial Treatment';
-      }
-
-      console.log('Redirigiendo a confirmación con servicio:', serviceName);
-
-      // Pequeño delay para asegurar que Calendly termine su proceso
-      setTimeout(function () {
-        window.location.href =
-          'booking-confirmation.html?service=' + encodeURIComponent(serviceName);
-      }, 1000);
-    }
-  }
-});
-
-
-// =======================================================
-// FUNCIONES DE RESERVA - ahora redirigen a WhatsApp
-// (la implementación real está más arriba en openWhatsAppReserva)
-// =======================================================
-// Nota: openCalendlyTherapeutic ya está definido arriba para abrir WhatsApp.
-// Dejamos este comentario para evitar una redefinición que sobreescriba el comportamiento.
-
-    
-    // Verificar que los píxeles estén cargados
-    document.addEventListener('DOMContentLoaded', function() {
-        if (typeof fbq === 'function') {
-            console.log('Meta Pixel cargado correctamente');
-        } else {
-            console.warn('Meta Pixel no está cargado');
-        }
-        
-        if (typeof gtag === 'function') {
-            console.log('Google Tags cargado correctamente');
-        } else {
-            console.warn('Google Tags no está cargado');
-        }
-    });
 </script>
 </body>
 </html>
