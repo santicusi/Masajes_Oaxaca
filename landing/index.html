@@ -599,193 +599,35 @@
         });
     }
 
-    // FUNCIONES DE CALENDLY CON TRACKING YA INTEGRADO EN LOS BOTONES
-    function openCalendlyTherapeutic() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Therapeutic Massage';
-        }
-    });
+    // FUNCIONES DE RESERVA POR WHATSAPP (antes Calendly) - TRACKING YA INTEGRADO EN LOS BOTONES
+    // Número de WhatsApp para reservas del catálogo
+    var WHATSAPP_RESERVA_NUMBER = '5219514751189';
+
+    // Abre WhatsApp con un mensaje pre-rellenado incluyendo el servicio seleccionado
+    function openWhatsAppReserva(serviceName) {
+        var message = 'Hola Avani Spa, me gustaría reservar el servicio: ' + serviceName + '. ¿Tienen disponibilidad?';
+        var url = 'https://wa.me/' + WHATSAPP_RESERVA_NUMBER + '?text=' + encodeURIComponent(message);
+        window.open(url, '_blank');
         return false;
     }
 
-    function openCalendlyDeepTissue() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Deep Tissue Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlySports() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Sports Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyRelaxing() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Relaxing Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyCouple() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Couples Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyCupping() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Cupping Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyPrenatal() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Prenatal Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyPostpartum() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Postpartum Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyDecontracting() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Decontracting Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyHotStone() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Hot Stone Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyHotCandle() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Hot Candle Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyLomiLomi() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Lomi Lomi Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlySpecialDecoration() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Special Decoration Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyFourHands() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=4 Hands Massage';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyBasicFacial() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Basic Facial Cleansing';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyDeepFacial() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Deep Facial Cleansing';
-        }
-    });
-        return false;
-    }
-
-    function openCalendlyHydrofacial() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/massage-medellin/booking-massage',
-        prefill: {},
-        utm: {},
-        onSuccessfulSchedule: function() {
-            window.location.href = 'booking-confirmation.html?service=Hydrofacial Treatment';
-        }
-    });
-        return false;
-    }
+    function openCalendlyTherapeutic()       { return openWhatsAppReserva('Therapeutic Massage'); }
+    function openCalendlyDeepTissue()        { return openWhatsAppReserva('Deep Tissue Massage'); }
+    function openCalendlySports()            { return openWhatsAppReserva('Sports Massage'); }
+    function openCalendlyRelaxing()          { return openWhatsAppReserva('Relaxing Massage'); }
+    function openCalendlyCouple()            { return openWhatsAppReserva('Couples Massage'); }
+    function openCalendlyCupping()           { return openWhatsAppReserva('Cupping Massage'); }
+    function openCalendlyPrenatal()          { return openWhatsAppReserva('Prenatal Massage'); }
+    function openCalendlyPostpartum()        { return openWhatsAppReserva('Postpartum Massage'); }
+    function openCalendlyDecontracting()     { return openWhatsAppReserva('Decontracting Massage'); }
+    function openCalendlyHotStone()          { return openWhatsAppReserva('Hot Stone Massage'); }
+    function openCalendlyHotCandle()         { return openWhatsAppReserva('Hot Candle Massage'); }
+    function openCalendlyLomiLomi()          { return openWhatsAppReserva('Lomi Lomi Massage'); }
+    function openCalendlySpecialDecoration() { return openWhatsAppReserva('Special Decoration Massage'); }
+    function openCalendlyFourHands()         { return openWhatsAppReserva('4 Hands Massage'); }
+    function openCalendlyBasicFacial()       { return openWhatsAppReserva('Basic Facial Cleansing'); }
+    function openCalendlyDeepFacial()        { return openWhatsAppReserva('Deep Facial Cleansing'); }
+    function openCalendlyHydrofacial()       { return openWhatsAppReserva('Hydrofacial Treatment'); }
 
 
     // Efecto parallax suave en scroll
@@ -1119,16 +961,11 @@ window.addEventListener('message', function (e) {
 
 
 // =======================================================
-// FUNCIONES DE CALENDLY CON TRACKING YA INTEGRADO
+// FUNCIONES DE RESERVA - ahora redirigen a WhatsApp
+// (la implementación real está más arriba en openWhatsAppReserva)
 // =======================================================
-function openCalendlyTherapeutic() {
-  Calendly.initPopupWidget({
-    url: 'https://calendly.com/massage-medellin/booking-massage',
-    prefill: {},
-    utm: {}
-  });
-  return false;
-}
+// Nota: openCalendlyTherapeutic ya está definido arriba para abrir WhatsApp.
+// Dejamos este comentario para evitar una redefinición que sobreescriba el comportamiento.
 
     
     // Verificar que los píxeles estén cargados
