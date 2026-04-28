@@ -144,9 +144,13 @@
         return false;
     }
 
-    // --- Reserva de servicio específico (mensaje pre-rellenado por servicio) ---
-    function reservarServicio(serviceName, serviceValue) {
-        var msg = 'Hola Avani Spa, me gustaría reservar el servicio: ' + serviceName + '. ¿Tienen disponibilidad esta semana?';
+    // --- Reserva de servicio específico (mensaje pre-rellenado por servicio + precios) ---
+    function reservarServicio(serviceName, priceInfo) {
+        var msg = 'Hola Avani Spa, me gustaría reservar el servicio: ' + serviceName;
+        if (priceInfo) {
+            msg += ' (' + priceInfo + ')';
+        }
+        msg += '. ¿Tienen disponibilidad esta semana?';
         var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
         return _fireAndOpen(
             url,
@@ -322,6 +326,57 @@
         inset: 0;
         background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.25) 100%);
         pointer-events: none;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       PRECIOS POR SERVICIO - NUEVO BLOQUE
+       Diseño elegante en dorado, integrado al estilo del spa
+       ═══════════════════════════════════════════════════════════════ */
+    .service-price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        padding: 1rem 1.2rem;
+        margin: 1.2rem 1.5rem 0.5rem;
+        background: linear-gradient(135deg, rgba(218,165,32,0.08), rgba(218,165,32,0.03));
+        border: 1px solid rgba(218,165,32,0.3);
+        border-radius: 10px;
+    }
+    .price-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        flex: 1;
+        padding: 0 0.5rem;
+    }
+    .price-duration {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--avani-text-light);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+    .price-amount {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.55rem;
+        font-weight: 600;
+        color: var(--avani-gold-deep);
+        letter-spacing: 0.5px;
+    }
+    .price-divider {
+        width: 1px;
+        height: 38px;
+        background: rgba(218,165,32,0.35);
+        align-self: center;
+    }
+    .service-price--single {
+        padding: 1.1rem 1.2rem;
+    }
+    .service-price--single .price-amount {
+        font-size: 1.85rem;
     }
 
     /* ═══ TESTIMONIOS ═══ */
@@ -660,25 +715,6 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════
-       BLOQUE DE PRECIOS - DESCOMENTAR PARA REACTIVAR
-       ═══════════════════════════════════════════════════════════════ */
-    /*
-    .pricing-badge {
-        display: inline-block;
-        padding: 0.4rem 1rem;
-        background: linear-gradient(135deg, var(--avani-gold), var(--avani-gold-light));
-        color: white;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 0.85rem;
-        font-weight: 600;
-        border-radius: 20px;
-        margin: 0.5rem 0;
-        letter-spacing: 0.5px;
-    }
-    .service-card .pricing-badge { margin-top: 0.8rem; }
-    */
-
-    /* ═══════════════════════════════════════════════════════════════
        POPUP DE OFERTA DE BIENVENIDA - DESCOMENTAR PARA REACTIVAR
        ═══════════════════════════════════════════════════════════════ */
     /*
@@ -744,6 +780,20 @@
             bottom: 20px !important;
             right: 20px !important;
             background-size: 30px 30px !important;
+        }
+        .service-price {
+            margin: 1rem 1rem 0.5rem;
+            padding: 0.85rem 0.8rem;
+        }
+        .price-amount {
+            font-size: 1.3rem;
+        }
+        .price-duration {
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+        }
+        .service-price--single .price-amount {
+            font-size: 1.6rem;
         }
     }
     </style>
@@ -884,7 +934,18 @@
                     <div class="service-description">
                         Tratamiento enfocado en aliviar tensiones musculares específicas y puntos de dolor. Combina técnicas para promover la curación, mejorar la circulación y restaurar el equilibrio natural de tu cuerpo.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje Terapéutico', 900)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$937.50</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,375</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Terapéutico', '60 min $937.50 / 90 min $1,375')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -895,7 +956,18 @@
                     <div class="service-description">
                         Terapia intensiva para capas musculares profundas y tensión crónica. Presión firme y movimientos lentos que liberan nudos musculares, mejoran la movilidad y alivian dolor persistente en cuello, espalda, hombros y piernas.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje Tejido Profundo', 900)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$937.50</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,375</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Tejido Profundo', '60 min $937.50 / 90 min $1,375')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -906,7 +978,18 @@
                     <div class="service-description">
                         Diseñado para personas activas y atletas. Se enfoca en grupos musculares específicos para mejorar el rendimiento, prevenir lesiones y acelerar la recuperación. Incluye estiramientos y presión dirigida.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje Deportivo', 900)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$937.50</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,375</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Deportivo', '60 min $937.50 / 90 min $1,375')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -917,7 +1000,18 @@
                     <div class="service-description">
                         Experiencia suave y liberadora de estrés que calma la mente y relaja profundamente el cuerpo. Movimientos envolventes, aromaterapia y aceites tibios para crear una sensación de tranquilidad completa.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje Relajante', 900)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$937.50</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,375</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Relajante', '60 min $937.50 / 90 min $1,375')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -928,7 +1022,18 @@
                     <div class="service-description">
                         Comparte una experiencia romántica y relajante juntos. Masajes simultáneos en un entorno tranquilo diseñado para dos. Perfecto para reconectar y relajarse en una atmósfera pacífica.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje en Pareja', 1800)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$1,875</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$2,750</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje en Pareja', '60 min $1,875 / 90 min $2,750')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -939,7 +1044,18 @@
                     <div class="service-description">
                         Técnica ancestral con copas especializadas que crean succión en la piel. Mejora el flujo sanguíneo, reduce la tensión muscular, promueve la curación y libera toxinas de capas profundas del tejido.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje con Ventosas', 900)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$937.50</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,375</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje con Ventosas', '60 min $937.50 / 90 min $1,375')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -950,7 +1066,18 @@
                     <div class="service-description">
                         Masaje suave y seguro diseñado para futuras madres. Alivia dolor lumbar, hinchazón en piernas, tensión en hombros y mejora la circulación. Posicionamiento cómodo y técnicas adaptadas a cada etapa del embarazo.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje Prenatal', 900)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$1,000</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,437.50</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Prenatal', '60 min $1,000 / 90 min $1,437.50')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -961,7 +1088,18 @@
                     <div class="service-description">
                         Tratamiento especializado para ayudar al cuerpo a recuperarse después del parto. Alivia tensión muscular, mejora la circulación, reduce la hinchazón y brinda apoyo emocional durante esta transición importante.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje Postparto', 900)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$1,000</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,437.50</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Postparto', '60 min $1,000 / 90 min $1,437.50')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -972,7 +1110,18 @@
                     <div class="service-description">
                         Tratamiento terapéutico para liberar contracturas musculares y tensión crónica. Presión dirigida y técnicas especializadas que restauran la flexibilidad muscular y eliminan dolor por estrés o mala postura.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje Descontracturante', 900)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$937.50</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,375</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Descontracturante', '60 min $937.50 / 90 min $1,375')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -983,7 +1132,18 @@
                     <div class="service-description">
                         Tratamiento lujoso que combina masaje tradicional con piedras volcánicas calentadas. Las piedras penetran profundamente en los músculos, derritiendo tensión y estrés, promoviendo relajación profunda y mejor circulación.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje Piedras Calientes', 900)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$1,062.50</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,500</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Piedras Calientes', '60 min $1,062.50 / 90 min $1,500')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -994,7 +1154,18 @@
                     <div class="service-description">
                         Experiencia única mejorada con ambiente especial y elementos decorativos. Perfecto para celebraciones, ocasiones especiales o para crear momentos memorables en un entorno bellamente personalizado.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje Decoración Especial', 1200)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$1,187.50</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,437.50</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Decoración Especial', '60 min $1,187.50 / 90 min $1,437.50')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -1005,7 +1176,18 @@
                     <div class="service-description">
                         Tratamiento indulgente con cera de vela tibia que se transforma en aceite lujoso. La cera nutre profundamente la piel mientras proporciona experiencia sensorial que combina aromaterapia con técnicas profundamente relajantes.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje con Velas Calientes', 1000)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$1,062.50</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,500</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje con Velas Calientes', '60 min $1,062.50 / 90 min $1,500')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -1016,7 +1198,18 @@
                     <div class="service-description">
                         Técnica tradicional hawaiana con movimientos fluidos y rítmicos que imitan las olas del océano. Tratamiento holístico que trabaja a nivel físico, mental y espiritual, promoviendo relajación profunda y flujo de energía.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje Lomi Lomi', 1000)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$1,500</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,625</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje Lomi Lomi', '60 min $1,500 / 90 min $1,625')">Reservar por WhatsApp</button>
                 </div>
             </div>
 
@@ -1030,7 +1223,18 @@
                     <div class="service-description">
                         Lo último en lujo y relajación. Dos terapeutas expertos trabajan en perfecta sincronización para brindarte una experiencia profundamente inmersiva y terapéutica. Los movimientos coordinados crean una sensación única que mejora la relajación y acelera la recuperación muscular. Tratamiento premium que te deja completamente rejuvenecido.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Masaje a 4 Manos', 1500)">Reservar por WhatsApp</button>
+                    <div class="service-price">
+                        <div class="price-row">
+                            <span class="price-duration">60 min</span>
+                            <span class="price-amount">$1,437.50</span>
+                        </div>
+                        <div class="price-divider"></div>
+                        <div class="price-row">
+                            <span class="price-duration">90 min</span>
+                            <span class="price-amount">$1,750</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Masaje a 4 Manos', '60 min $1,437.50 / 90 min $1,750')">Reservar por WhatsApp</button>
                 </div>
             </div>
 
@@ -1045,7 +1249,13 @@
                     <div class="service-description">
                         Tratamiento facial esencial: limpieza profunda, exfoliación suave, extracción ligera de puntos negros, mascarilla personalizada (calmante, hidratante o purificante), tonificación, hidratación y protección solar. Perfecto para mantener una piel saludable y radiante.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Limpieza Facial Básica', 700)">Reservar por WhatsApp</button>
+                    <div class="service-price service-price--single">
+                        <div class="price-row">
+                            <span class="price-duration">Sesión</span>
+                            <span class="price-amount">$625</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Limpieza Facial Básica', '$625')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -1056,7 +1266,13 @@
                     <div class="service-description">
                         Tratamiento integral con análisis personalizado, yoga facial, limpieza profunda, exfoliación con carbón activado, peeling enzimático, extracción completa de impurezas, mascarilla de aloe vera, crioterapia, drenaje linfático, mascarilla de alta hidratación, velo de colágeno y rodillo de jade.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Limpieza Facial Profunda', 900)">Reservar por WhatsApp</button>
+                    <div class="service-price service-price--single">
+                        <div class="price-row">
+                            <span class="price-duration">Sesión</span>
+                            <span class="price-amount">$875</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Limpieza Facial Profunda', '$875')">Reservar por WhatsApp</button>
                 </div>
 
                 <div class="service-card">
@@ -1067,7 +1283,13 @@
                     <div class="service-description">
                         Tratamiento facial premium para una piel tipo porcelana. Técnicas de limpieza avanzadas, exfoliación especializada, mascarillas personalizadas, extracciones profesionales, sueros rejuvenecedores, masaje facial para brillo inmediato, hidratación intensiva y acabado protector. Ideal para ocasiones especiales.
                     </div>
-                    <button class="btn-availability" onclick="return reservarServicio('Tratamiento Hidrofacial', 1200)">Reservar por WhatsApp</button>
+                    <div class="service-price service-price--single">
+                        <div class="price-row">
+                            <span class="price-duration">Sesión</span>
+                            <span class="price-amount">$1,187.50</span>
+                        </div>
+                    </div>
+                    <button class="btn-availability" onclick="return reservarServicio('Tratamiento Hidrofacial', '$1,187.50')">Reservar por WhatsApp</button>
                 </div>
             </div>
         </section>
