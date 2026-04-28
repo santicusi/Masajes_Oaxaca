@@ -331,52 +331,65 @@
     /* ═══════════════════════════════════════════════════════════════
        PRECIOS POR SERVICIO - NUEVO BLOQUE
        Diseño elegante en dorado, integrado al estilo del spa
+       Selectores específicos + !important para evitar herencia de style.css
        ═══════════════════════════════════════════════════════════════ */
-    .service-price {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0;
-        padding: 1rem 1.2rem;
-        margin: 1.2rem 1.5rem 0.5rem;
-        background: linear-gradient(135deg, rgba(218,165,32,0.08), rgba(218,165,32,0.03));
-        border: 1px solid rgba(218,165,32,0.3);
-        border-radius: 10px;
+    .service-card .service-price {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 0 !important;
+        padding: 1rem 1.2rem !important;
+        margin: 1.2rem 1.5rem 0.5rem !important;
+        background: linear-gradient(135deg, rgba(218,165,32,0.08), rgba(218,165,32,0.03)) !important;
+        border: 1px solid rgba(218,165,32,0.3) !important;
+        border-radius: 10px !important;
     }
-    .price-row {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.25rem;
-        flex: 1;
-        padding: 0 0.5rem;
+    .service-card .service-price .price-row {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.25rem !important;
+        flex: 1 !important;
+        padding: 0 0.5rem !important;
+        background: transparent !important;
     }
-    .price-duration {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 0.72rem;
-        font-weight: 600;
-        color: var(--avani-text-light);
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
+    .service-card .service-price .price-duration {
+        display: block !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 0.72rem !important;
+        font-weight: 600 !important;
+        color: #6b6b6b !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        line-height: 1.2 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        text-shadow: none !important;
     }
-    .price-amount {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 1.55rem;
-        font-weight: 600;
-        color: var(--avani-gold-deep);
-        letter-spacing: 0.5px;
+    .service-card .service-price .price-amount {
+        display: block !important;
+        font-family: 'Cormorant Garamond', serif !important;
+        font-size: 1.55rem !important;
+        font-weight: 600 !important;
+        color: #B8860B !important;
+        letter-spacing: 0.5px !important;
+        line-height: 1.2 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        text-shadow: none !important;
     }
-    .price-divider {
-        width: 1px;
-        height: 38px;
-        background: rgba(218,165,32,0.35);
-        align-self: center;
+    .service-card .service-price .price-divider {
+        width: 1px !important;
+        height: 38px !important;
+        background: rgba(218,165,32,0.35) !important;
+        align-self: center !important;
+        flex: 0 0 1px !important;
     }
-    .service-price--single {
-        padding: 1.1rem 1.2rem;
+    .service-card .service-price--single {
+        padding: 1.1rem 1.2rem !important;
     }
-    .service-price--single .price-amount {
-        font-size: 1.85rem;
+    .service-card .service-price--single .price-amount {
+        font-size: 1.85rem !important;
     }
 
     /* ═══ TESTIMONIOS ═══ */
@@ -781,19 +794,19 @@
             right: 20px !important;
             background-size: 30px 30px !important;
         }
-        .service-price {
-            margin: 1rem 1rem 0.5rem;
-            padding: 0.85rem 0.8rem;
+        .service-card .service-price {
+            margin: 1rem 1rem 0.5rem !important;
+            padding: 0.85rem 0.8rem !important;
         }
-        .price-amount {
-            font-size: 1.3rem;
+        .service-card .service-price .price-amount {
+            font-size: 1.3rem !important;
         }
-        .price-duration {
-            font-size: 0.65rem;
-            letter-spacing: 1px;
+        .service-card .service-price .price-duration {
+            font-size: 0.65rem !important;
+            letter-spacing: 1px !important;
         }
-        .service-price--single .price-amount {
-            font-size: 1.6rem;
+        .service-card .service-price--single .price-amount {
+            font-size: 1.6rem !important;
         }
     }
     </style>
